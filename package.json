@@ -1,0 +1,25 @@
+{
+  "name": "brian_site-2017",
+  "version": "0.1.0",
+  "description": "Personal resume website for Brian Ellis",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianEllisBlueAcorn/briansResume.git"
+  },
+  "keywords": [
+    "personal"
+  ],
+  "author": "Brian Ellis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianEllisBlueAcorn/briansResume/issues"
+  },
+  "homepage": "https://github.com/BrianEllisBlueAcorn/briansResume#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
