@@ -54,3 +54,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# media databases and file structure system
+Thumbs.db
+.dstore
