@@ -1,22 +1,12 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
-
-
-
-
+// devnote: !default is used to make variables immutable
 
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
-
-/// Code (monospace) font family
-/// @type List
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-
-
-
-
+$font-sans: 'Josefin Sans', 'Arial', sans-serif !default;
+$font-serif: 'Lora', serif !default;
 
 /// Copy text color
 /// @type Color
@@ -44,6 +34,7 @@ $dark-grey: rgb(68, 68, 68) !default;
 
 /// Container's maximum width
 /// @type Length
+/// 16 col / 59px width
 $max-width: 1180px !default;
 
 
@@ -60,12 +51,8 @@ $breakpoints: (
 ) !default;
 
 
-
-
-
-
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
-$base-url: '/assets/' !default;
+//base-url: '/assets/' !default;
