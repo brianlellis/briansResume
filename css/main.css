@@ -427,12 +427,16 @@ a {
     color: #222222;
     text-decoration: underline; }
 
+ul {
+  list-style-type: none; }
+
 section, nav {
   padding: 0 5%; }
 
 section {
-  padding-top: 30px;
-  padding-bottom: 30px; }
+  clear: both;
+  padding-bottom: 30px;
+  padding-top: 30px; }
 
 /**
  * Basic typography style for copy text
@@ -524,3 +528,98 @@ nav li {
   float: left;
   text-align: center;
   width: 20%; }
+
+footer {
+  background-color: #444444;
+  color: #FFF;
+  text-align: right;
+  padding: 15px 30px;
+  letter-spacing: 1px; }
+
+#heroSlider {
+  padding: 0;
+  height: 560px;
+  overflow: hidden; }
+  #heroSlider img {
+    width: 100%; }
+
+.card-grid-1 {
+  padding: 0; }
+  .card-grid-1 * {
+    padding: 0; }
+  .card-grid-1 li {
+    float: left; }
+
+.card-grid-2 * {
+  padding: 0; }
+
+.card-grid-2 li {
+  float: left; }
+
+.card-grid-slider a {
+  float: left;
+  line-height: 0; }
+
+.card-grid-slider ul {
+  padding: 0;
+  height: 300px;
+  overflow-y: hidden;
+  overflow-x: visible; }
+  .card-grid-slider ul li {
+    -moz-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.15);
+    float: left;
+    text-align: center; }
+
+.card-grid-slider.card-4 li {
+  height: 90%;
+  margin: 1%;
+  width: 23%; }
+  .card-grid-slider.card-4 li img {
+    max-height: 50%;
+    margin: 25% auto;
+    max-width: 100%; }
+
+.card-grid-1 a,
+.card-grid-2 a {
+  float: left;
+  line-height: 0; }
+
+.card-grid-1.card-4 li,
+.card-grid-2.card-4 li {
+  width: 25%; }
+  .card-grid-1.card-4 li img,
+  .card-grid-2.card-4 li img {
+    width: 100%; }
+
+.card-grid-2.card-4 li, .card-grid-2.card-8 li, .card-grid-2.card-7 li {
+  height: 200px;
+  margin: 1%;
+  width: 23%;
+  text-align: center;
+  position: relative; }
+  .card-grid-2.card-4 li a, .card-grid-2.card-8 li a, .card-grid-2.card-7 li a {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    margin: auto; }
+  .card-grid-2.card-4 li img, .card-grid-2.card-8 li img, .card-grid-2.card-7 li img {
+    width: 40%;
+    height: auto; }
+
+.card-grid-2.card-8 li, .card-grid-2.card-7 li {
+  width: 12%;
+  margin: 0.25%;
+  position: relative; }
+  .card-grid-2.card-8 li img, .card-grid-2.card-7 li img {
+    width: 80%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 50px; }
+
+.card-grid-2.card-7 li {
+  width: 13.5%; }
