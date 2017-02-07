@@ -38,7 +38,9 @@ $dark-grey: rgb(68, 68, 68) !default;
 $max-width: 1180px !default;
 
 
-
+/// Base padding/margin value
+/// @type Length
+$base-pad: 30px !default;
 
 
 /// Breakpoints map

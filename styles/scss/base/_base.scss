@@ -31,3 +31,6 @@ a {
     text-decoration: underline;
   }
 }
+
+section, nav { padding: 0 5%; }
+section { padding-top: $base-pad; padding-bottom: $base-pad; }
