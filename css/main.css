@@ -539,9 +539,23 @@ footer {
 #heroSlider {
   padding: 0;
   height: 560px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   #heroSlider img {
     width: 100%; }
+  #heroSlider h1, #heroSlider h2 {
+    position: absolute;
+    color: #FFF; }
+  #heroSlider h1 {
+    top: 100px;
+    left: 100px;
+    line-height: 50px;
+    font-size: 64px; }
+    #heroSlider h1 span {
+      margin-left: 100px; }
+  #heroSlider h2 {
+    bottom: 130px;
+    left: 210px; }
 
 .card-grid-1 {
   padding: 0; }

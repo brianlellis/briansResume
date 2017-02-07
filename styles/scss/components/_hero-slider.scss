@@ -3,11 +3,30 @@
 // -----------------------------------------------------------------------------
 
 #heroSlider {
-	padding: 0;
-    height: 560px;
-    overflow: hidden;
+  padding: 0;
+  height: 560px;
+  overflow: hidden;
+  position: relative;
 
-    img {
-    	width: 100%;
+  img {
+    width: 100%;
+  }
+  h1, h2 {
+    position: absolute;
+    color: #FFF;
+  }
+  h1 {
+    top: 100px;
+    left: 100px;
+    line-height: 50px;
+    font-size: 64px;
+
+    span {
+      margin-left: 100px;
     }
+  }
+  h2 {
+    bottom: 130px;
+    left: 210px;
+  }
 }
