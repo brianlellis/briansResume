@@ -1,3 +1,37 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+#logotype {
+  height: 100px;
+  position: relative;
+  text-align: center;
+
+  > div {
+    font-size: 96px; // 6x times root font val
+    left: 0;
+    line-height: 1;
+    margin: auto;
+    position: absolute;
+    right: 0;
+  }
+  .leftLetter span { margin-left: -34px; }
+
+  .rightLetter {
+    top: 16px;
+    span { margin-left: 34px; }
+  }
+}
+nav {
+  ul { 
+    display: inline-block;
+    list-style-type: none;
+    padding: 0; 
+    width: 100%;
+  }
+  li { 
+    float: left;
+    text-align: center;
+    width: 20%;
+  }
+}

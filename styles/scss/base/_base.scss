@@ -31,3 +31,14 @@ a {
     text-decoration: underline;
   }
 }
+
+ul { 
+  list-style-type: none; 
+}
+
+section, nav { padding: 0 5%; }
+section { 
+  clear: both; 
+  padding-bottom: $base-pad; 
+  padding-top: $base-pad; 
+}
