@@ -61,3 +61,6 @@ Thumbs.db
 
 # sassdoc files which are alternatively built via TravisCI for remote server
 sassdoc/
+
+# jsdoc files
+docs/

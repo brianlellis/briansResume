@@ -4,7 +4,8 @@
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
     sass  = require('gulp-sass'),
-    sassdoc = require('sassdoc');
+    sassdoc = require('sassdoc'),
+    jsdoc = require('gulp-jsdoc3');
 
 // create a default task and just log a message
 gulp.task('default', function() {
@@ -31,3 +32,9 @@ gulp.task('sass-watch', function () {
 
 // SASS manual build with doc
 gulp.task('sass-compile',['sass-styles', 'sassdoc']);
+
+// JSDoc compilation
+gulp.task('jsdoc', function (cb) {
+    gulp.src(['README.md', 'js/**/*.js'], {read: false})
+        .pipe(jsdoc(cb));
+});
