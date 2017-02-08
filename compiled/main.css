@@ -504,19 +504,22 @@ body {
   height: 100px;
   position: relative;
   text-align: center; }
-  #logotype > div {
-    font-size: 96px;
+  #logotype > div, #logotype a {
+    font-size: 84px;
     left: 0;
     line-height: 1;
     margin: auto;
     position: absolute;
-    right: 0; }
+    right: 0;
+    color: #000; }
+    #logotype > div:hover, #logotype a:hover {
+      text-decoration: none; }
   #logotype .leftLetter span {
-    margin-left: -34px; }
+    margin-left: -28px; }
   #logotype .rightLetter {
-    top: 16px; }
+    margin-top: -65px; }
     #logotype .rightLetter span {
-      margin-left: 34px; }
+      margin-left: 28px; }
 
 nav a {
   color: #000; }

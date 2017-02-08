@@ -7,19 +7,21 @@
   position: relative;
   text-align: center;
 
-  > div {
-    font-size: 96px; // 6x times root font val
+  > div, a {
+    font-size: 84px; // 6x times root font val
     left: 0;
     line-height: 1;
     margin: auto;
     position: absolute;
     right: 0;
+    color: #000;
+    &:hover { text-decoration: none; }
   }
-  .leftLetter span { margin-left: -34px; }
+  .leftLetter span { margin-left: -28px; }
 
   .rightLetter {
-    top: 16px;
-    span { margin-left: 34px; }
+    margin-top: -65px;
+    span { margin-left: 28px; }
   }
 }
 nav {
