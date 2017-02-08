@@ -32,8 +32,8 @@ gulp.task('browser-sync', function() {
 
 // HTML5 linter
 gulp.task('html5-lint', function() {
-    return gulp.src('./src/*.html')
-        .pipe(html5Lint());
+    return gulp.src('*.html')
+        .pipe(html5Lint()); // FIXME: html5 api down
 });
 
 // SASS manual compile
@@ -98,6 +98,7 @@ gulp.task('js-compile', function () {
 // FULL BUILD OF ALL ASSETS
 gulp.task('build', ['html5-lint', 'jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
 
+// FIXME: BAD GLOB CONFIGURATION
 gulp.task('build-watch', ['browser-sync'], function () {
     gulp.watch('*', ['html5-lint', 'jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
 });
