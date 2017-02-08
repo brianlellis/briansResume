@@ -539,6 +539,14 @@ footer {
   padding: 15px 30px;
   letter-spacing: 1px; }
 
+#contact-me button {
+  float: right;
+  margin-top: 20px;
+  background: #444444;
+  color: #FFF;
+  border: none;
+  padding: 10px 15px; }
+
 #heroSlider {
   padding: 0;
   height: 560px;
@@ -608,19 +616,19 @@ footer {
   .card-grid-2.card-4 li img {
     width: 100%; }
 
-.card-grid-2.card-4 li, .card-grid-2.card-8 li, .card-grid-2.card-7 li {
+.card-grid-2.card-4 li, .card-grid-2.card-8 li, .card-grid-2.card-7 li, .card-grid-2.card-12 li {
   height: 200px;
   margin: 1%;
   width: 23%;
   text-align: center;
   position: relative; }
-  .card-grid-2.card-4 li a, .card-grid-2.card-8 li a, .card-grid-2.card-7 li a {
+  .card-grid-2.card-4 li a, .card-grid-2.card-8 li a, .card-grid-2.card-7 li a, .card-grid-2.card-12 li a {
     position: absolute;
     bottom: 15px;
     left: 0;
     right: 0;
     margin: auto; }
-  .card-grid-2.card-4 li img, .card-grid-2.card-8 li img, .card-grid-2.card-7 li img {
+  .card-grid-2.card-4 li img, .card-grid-2.card-8 li img, .card-grid-2.card-7 li img, .card-grid-2.card-12 li img {
     width: 40%;
     height: auto; }
 
@@ -638,6 +646,16 @@ footer {
 
 .card-grid-2.card-7 li {
   width: 13.5%; }
+
+.card-grid-2.card-12 {
+  padding: 0;
+  margin-bottom: 150px; }
+  .card-grid-2.card-12 li {
+    width: 8.33%;
+    margin: 0;
+    height: auto; }
+    .card-grid-2.card-12 li img {
+      width: 100%; }
 
 #modal-overlay {
   background: rgba(0, 0, 0, 0.5);
@@ -680,10 +698,3 @@ footer {
       max-width: 100%;
       max-height: 150px;
       margin-top: 30px; }
-    #modal-overlay .modal-box #contact-me button {
-      float: right;
-      margin-top: 20px;
-      background: #444444;
-      color: #FFF;
-      border: none;
-      padding: 10px 15px; }

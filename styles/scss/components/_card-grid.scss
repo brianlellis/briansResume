@@ -64,7 +64,8 @@
 .card-grid-2 {
   &.card-4,
   &.card-8,
-  &.card-7 {
+  &.card-7,
+  &.card-12 {
     li {
       height: 200px;
       margin: 1%; 
@@ -102,6 +103,16 @@
     }
   }
   &.card-7 li { width: 13.5%; }
+  &.card-12 {
+    padding: 0;
+    margin-bottom: 150px;
+    li { 
+      width: 8.33%;
+      margin: 0;
+      height: auto;
+      img { width: 100%; }
+    }
+  }
 }
 
 // Card hover styles
