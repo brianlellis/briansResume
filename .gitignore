@@ -64,3 +64,6 @@ sassdoc/
 
 # jsdoc files
 docs/
+
+# compiled assets from gulp
+# compile/

@@ -3,20 +3,45 @@
 // grab our gulp packages
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
-    sass  = require('gulp-sass'),
-    sassdoc = require('sassdoc'),
-    jsdoc = require('gulp-jsdoc3');
+    sass  = require('gulp-sass'), // SASS compiler
+    sassdoc = require('sassdoc'), // SASS Documentation builder
+    jsdoc = require('gulp-jsdoc3'), // JS Documentation builder
+    cucumber = require('gulp-cucumber'), // Automated QA feature testing
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    cleanCSS = require('gulp-clean-css'),
+    browsync = require('browser-sync').create(); // create a browser sync instance.
+    // FIXME: Configure gulp load plugins in future release
+    //plugins = require('gulp-load-plugins')();
 
 // create a default task and just log a message
 gulp.task('default', function() {
   return gutil.log('Gulp is running!')
 });
 
+// Browser Sync 
+gulp.task('browser-sync', function() {
+    browsync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+});
+
 // SASS manual compile
 gulp.task('sass-styles', function () {
     gulp.src('styles/scss/**/*.scss')
         .pipe( sass().on('error', sass.logError) )
-        .pipe( gulp.dest('css/') );
+        .pipe( gulp.dest('compiled/') );
+
+    return gulp.src('compiled/*.css')
+        .pipe(cleanCSS({debug: true}, function(details) {
+            console.log(details.name + ' original size: ' + details.stats.originalSize);
+            console.log(details.name + ' NEW size: ' + details.stats.minifiedSize);
+        }))
+        .pipe(gulp.dest('compiled'))
+        .pipe(browsync.reload({stream: true})); // prompts a reload after compilation
 });
 
 // SASSDoc compile
@@ -26,7 +51,7 @@ gulp.task('sassdoc', function () {
 });
 
 // SASS watch task
-gulp.task('sass-watch', function () {
+gulp.task('sass-watch', ['browser-sync'], function () {
     gulp.watch('styles/scss/**/*.scss', ['sass-styles', 'sassdoc']);
 });
 
@@ -37,4 +62,35 @@ gulp.task('sass-compile',['sass-styles', 'sassdoc']);
 gulp.task('jsdoc', function (cb) {
     gulp.src(['README.md', 'js/**/*.js'], {read: false})
         .pipe(jsdoc(cb));
+});
+
+// Cucumber compiler
+// run tests with the following command: npm test
+gulp.task('cucumber', function() {
+    return gulp.src('features/*').pipe(cucumber({
+        'steps': 'features/steps/steps.js',
+        'format': 'summary'
+    }));
+});
+
+// JS Hint Stylish Output configured
+gulp.task('jshint', () =>
+    gulp.src('js/**/*.js')
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('jshint-stylish'))
+);
+
+// JS Build watch task
+gulp.task('js-compile', function () {
+    gulp.src('js/**/*.js')
+        .pipe(uglify())
+        .pipe(concat('compiledJS.js'))
+        .pipe(gulp.dest('./compiled'));
+});
+
+// FULL BUILD OF ALL ASSETS
+gulp.task('build', ['jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
+
+gulp.task('build-watch', ['browser-sync'], function () {
+    gulp.watch('*', ['jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
 });
