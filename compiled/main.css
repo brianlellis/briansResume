@@ -518,6 +518,9 @@ body {
     #logotype .rightLetter span {
       margin-left: 34px; }
 
+nav a {
+  color: #000; }
+
 nav ul {
   display: inline-block;
   list-style-type: none;
@@ -539,9 +542,23 @@ footer {
 #heroSlider {
   padding: 0;
   height: 560px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   #heroSlider img {
     width: 100%; }
+  #heroSlider h1, #heroSlider h2 {
+    position: absolute;
+    color: #FFF; }
+  #heroSlider h1 {
+    top: 100px;
+    left: 100px;
+    line-height: 50px;
+    font-size: 64px; }
+    #heroSlider h1 span {
+      margin-left: 100px; }
+  #heroSlider h2 {
+    bottom: 130px;
+    left: 210px; }
 
 .card-grid-1 {
   padding: 0; }
@@ -566,8 +583,6 @@ footer {
   overflow-y: hidden;
   overflow-x: visible; }
   .card-grid-slider ul li {
-    -moz-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.15);
     float: left;
     text-align: center; }
@@ -623,3 +638,52 @@ footer {
 
 .card-grid-2.card-7 li {
   width: 13.5%; }
+
+#modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: -100%;
+  width: 100%;
+  transition-duration: 500ms; }
+  #modal-overlay .modal-box {
+    background-color: #FFF;
+    border: 1px solid #444444;
+    height: 600px;
+    left: 0;
+    margin: 7% auto;
+    position: absolute;
+    right: 0;
+    width: 740px; }
+    #modal-overlay .modal-box nav {
+      padding: 0; }
+      #modal-overlay .modal-box nav ul {
+        margin: 0; }
+        #modal-overlay .modal-box nav ul li {
+          text-align: center;
+          width: 50%;
+          border-bottom: 1px solid #999999;
+          padding: 20px 0; }
+          #modal-overlay .modal-box nav ul li.active {
+            background-color: #444444;
+            box-shadow: inset 0px 0px 15px -2px rgba(0, 0, 0, 0.75); }
+            #modal-overlay .modal-box nav ul li.active a {
+              color: #FFF; }
+    #modal-overlay .modal-box #contact-me h1 {
+      margin: 10px auto; }
+    #modal-overlay .modal-box #contact-me p {
+      margin: 5px 0; }
+    #modal-overlay .modal-box #contact-me textarea {
+      width: 100%;
+      height: 150px;
+      max-width: 100%;
+      max-height: 150px;
+      margin-top: 30px; }
+    #modal-overlay .modal-box #contact-me button {
+      float: right;
+      margin-top: 20px;
+      background: #444444;
+      color: #FFF;
+      border: none;
+      padding: 10px 15px; }

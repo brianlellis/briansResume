@@ -58,3 +58,12 @@ typings/
 # media databases and file structure system
 Thumbs.db
 .dstore
+
+# sassdoc files which are alternatively built via TravisCI for remote server
+sassdoc/
+
+# jsdoc files
+docs/
+
+# compiled assets from gulp
+# compile/

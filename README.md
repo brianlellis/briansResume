@@ -1,7 +1,7 @@
-#release A
- * Base HTML content for homepage
- * SASS implementation
- * ADA compliance AAA
+#release B
+ * Scaffold out additional site pages.
+ * Configure Gulp for automated integration tests during compilation
+ * Add JSDoc and SASSDoc to website
 
 ##Branch Naming Conventions
  * master - Contains the most stable recent version of the site
