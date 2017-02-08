@@ -59,11 +59,11 @@ function update () {
   }
   
   // score keeper
-  if (gameBall.x < 46) {
+  if (gameBall.x < 30) {
     p2c+=1;
     scoreP2.text = 'player 2: '+p2c;
     resetBall();
-  } else if (gameBall.x > worldHit - 46) {
+  } else if (gameBall.x > worldHit - 30) {
     p1c+=1;
     scoreP1.text = 'player 1: '+p1c;
     resetBall();

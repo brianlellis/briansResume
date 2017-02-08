@@ -1,0 +1,37 @@
+// TODO: Flesh out column system more as 2-col is the only reliable method at the moment
+
+section[class^="col-"] { 
+  clear: both;
+  div { 
+    margin: 0; 
+    padding: 0; 
+    display: inline-block; 
+
+    img { max-width: 90%; }
+  }
+}
+
+// Even width col divisions
+.col-2 div { width: 50%; }
+.col-3 div { width: 33%; }
+.col-4 div { width: 25%; }
+.col-5 div { width: 20%; }
+.col-6 div { width: 16%; }
+.col-7 div { width: 14%; }
+.col-8 div { width: 12%; }
+.col-9 div { width: 11%; }
+.col-10 div { width: 10%; }
+.col-11 div { width: 11%; }
+.col-12 div { width: 8.333%; }
+
+// Even width col divisions
+.col-2-third {
+  &-left div { 
+    &:first-child { width: 33%; float: left; img { float: left; margin-top: 25%; } } 
+    &:last-child { width: 66%; }
+  }
+  &-right div { 
+    &:first-child { width: 66%; } 
+    &:last-child { width: 33%;  float: right; img { float: right; margin-top: 50%; } }
+  }
+}

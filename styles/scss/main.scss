@@ -20,7 +20,8 @@
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer';
+  'layout/footer',
+  'layout/col-layouts';
 
 // 5. Components
 @import
@@ -28,7 +29,8 @@
   'components/hero-slider',
   'components/card-grid',
   'components/modal',
-  'components/phaser';
+  'components/phaser',
+  'components/lang-badges';
 
 // 6. Page-specific styles
 @import
