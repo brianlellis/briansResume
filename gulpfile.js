@@ -11,7 +11,8 @@ var gulp  = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     cleanCSS = require('gulp-clean-css'),
-    browsync = require('browser-sync').create(); // create a browser sync instance.
+    browsync = require('browser-sync').create(), // create a browser sync instance.
+    html5Lint = require('gulp-html5-lint');
     // FIXME: Configure gulp load plugins in future release
     //plugins = require('gulp-load-plugins')();
 
@@ -27,6 +28,12 @@ gulp.task('browser-sync', function() {
             baseDir: "./"
         }
     });
+});
+
+// HTML5 linter
+gulp.task('html5-lint', function() {
+    return gulp.src('./src/*.html')
+        .pipe(html5Lint());
 });
 
 // SASS manual compile
@@ -89,8 +96,8 @@ gulp.task('js-compile', function () {
 });
 
 // FULL BUILD OF ALL ASSETS
-gulp.task('build', ['jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
+gulp.task('build', ['html5-lint', 'jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
 
 gulp.task('build-watch', ['browser-sync'], function () {
-    gulp.watch('*', ['jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
+    gulp.watch('*', ['html5-lint', 'jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
 });
