@@ -12,7 +12,9 @@ var gulp  = require('gulp'),
     concat = require('gulp-concat'),
     cleanCSS = require('gulp-clean-css'),
     browsync = require('browser-sync').create(), // create a browser sync instance.
-    html5Lint = require('gulp-html5-lint');
+    // FIXME: html5 api is down
+    //html5Lint = require('gulp-html5-lint'),
+    imagemin = require('gulp-imagemin');
     // FIXME: Configure gulp load plugins in future release
     //plugins = require('gulp-load-plugins')();
 
@@ -95,8 +97,15 @@ gulp.task('js-compile', function () {
         .pipe(gulp.dest('./compiled'));
 });
 
+// Image optimization task
+gulp.task('images', function () {
+    gulp.src('media/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('media'))
+});
+
 // FULL BUILD OF ALL ASSETS
-gulp.task('build', ['html5-lint', 'jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
+gulp.task('build', ['images', 'jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
 
 // FIXME: BAD GLOB CONFIGURATION
 gulp.task('build-watch', ['browser-sync'], function () {

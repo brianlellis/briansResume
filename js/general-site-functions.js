@@ -13,6 +13,8 @@ var siteCore = (function ($) {
       slideWidth, 
       slideHeight,
       sliderUlWidth,
+      autoSlide,
+      autoSlideStopped,
 
       // Projects page selectors
       a,
@@ -30,18 +32,20 @@ var siteCore = (function ($) {
       _self.observers(); // General site observers
 
       // PAGE SPECCIFIC FUNCTIONS
-      if (pageURL.indexOf("index") > 0) {
-        awardCards = $('#awards-and-certs');
-        clientPictures = $('main section.clients');
-
-        _self.awardsAndCerts(); // awards and certs flipcard
-        _self.goToClients(); // goes to clients page for client grid
-      } else if (pageURL.indexOf("about") > 0) {
+      if (pageURL.indexOf("about") > 0) {
 
       } else if (pageURL.indexOf("learning") > 0) {
 
       } else if (pageURL.indexOf("past-projects") > 0) {
         _self.clientGrid();
+      } 
+      // default for index page
+      else {
+        awardCards = $('#awards-and-certs');
+        clientPictures = $('main section.clients');
+
+        _self.awardsAndCerts(); // awards and certs flipcard
+        _self.goToClients(); // goes to clients page for client grid
       }
     },
     observers: function () {
@@ -102,20 +106,31 @@ var siteCore = (function ($) {
       $('#sliderHold li').width(slideWidth);
       $('#awards-and-certs').width(4.25 * slideWidth);
 
-      // Sets auto slide interval
-      var autoSlide = setInterval(function () {
-        $('#sliderHold li:eq(0)').animate({
-            marginLeft: - slideWidth * 1.2 // Multiplier ex 1.2 affects amount of slides to go past
-        }, 'slow', function () {
-            $('#sliderHold li:first-child').css('marginLeft','').appendTo('#sliderHold');
-        });
-      }, 5000);
+      _self.autoSlide();
 
-      $('a.control_next').click(function (e) {
+      $('.control_next').click(function (e) {
         e.preventDefault();
         _self.sliderMoveRight();
-        clearInterval(autoSlide);
+
+        // FIXME: This is a sloppy method for auto starting the auto slider again and needs more logic        
+        autoSlideStopped = true;
       });
+    },
+    autoSlide: function () {
+      // Sets auto slide interval
+      autoSlide = setInterval(function () {
+        if (! autoSlideStopped) {
+          $('#sliderHold li:eq(0)').animate({
+              marginLeft: - slideWidth * 1.2 // Multiplier ex 1.2 affects amount of slides to go past
+          }, 'slow', function () {
+              $('#sliderHold li:first-child').css('marginLeft','').appendTo('#sliderHold');
+          });
+        } else {
+          setTimeout(function () {
+            autoSlideStopped = false;
+          }, 10000);
+        }
+      }, 5000);
     },
     sliderMoveRight: function() {
       $('#sliderHold li:eq(0)').animate({

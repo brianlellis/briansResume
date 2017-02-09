@@ -860,3 +860,16 @@ section[class^="col-"] {
     cursor: pointer; }
     .clients #past-client-overlay:hover {
       opacity: 1; }
+
+#site-resources .placard {
+  cursor: pointer; }
+  #site-resources .placard:hover {
+    animation: spin 500ms 1 ease-in; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateY(0deg); }
+  50% {
+    -webkit-transform: rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateY(0deg); } }
