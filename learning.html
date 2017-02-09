@@ -22,8 +22,8 @@
       <li><a href="past-projects.html" title="Navigate to projects">Past Projects</a></li>
       <li><a href="learning.html" title="Navigate to learning">Learning</a></li>
       <li><a href="about.html" title="Navigate to about">About</a></li>
-      <li><a href="resume.html" title="Navigate to home">Resume</a></li>
-      <li><a href="contact.html" title="Navigate to contact">Contact</a></li>
+      <li><a href="#" class="modal resume" title="Navigate to home">Resume</a></li>
+      <li><a href="#" class="modal contact" title="Navigate to contact">Contact</a></li>
     </ul>
   </nav>
   <main>
@@ -124,6 +124,30 @@
   <footer>
     Copyright 2016. Brian L. Ellis
   </footer>
+  <div id="modal-overlay">
+    <div class="closeButton"><span>X &nbsp;</span>close</div>
+    <div class="modal-box">
+      <nav>
+        <ul>
+          <li class="resume"><a href="#" title="">Resume</a></li>
+          <li class="contact"><a href="#" title="">Contact</a></li>
+        </ul>
+      </nav>
+      <section id="contact-me">
+        <h1>Brian Ellis</h1>
+        <p>PHONE: (803) 556-0261</p>
+        <p>EMAIL: Brian@BriansResume.com</p>
+        <p>MAILING: 504 Canal Dr. Pelion, SC 29123</p>
+        <textarea type="text" name="contact-msg"></textarea>
+        <button type="button">Send message</button>
+      </section>
+      <section id="my-resume">
+        
+      </section>
+    </div>
+  </div>
 
+  <!--NON-LIBRARY JS ASSETS -->
+  <script src="js/general-site-functions.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>

@@ -9,6 +9,15 @@
   width: 100%;
   transition-duration: 500ms;
 
+  .closeButton { 
+    position: absolute; 
+    top: 25px; 
+    right: 25px; 
+    color: #FFF;
+    cursor: pointer;
+    span { font-size: px; } 
+  }
+
   .modal-box {
     background-color: #FFF;
     border: 1px solid $dark-grey;
@@ -28,6 +37,7 @@
           width: 50%;
           border-bottom: 1px solid $mid-grey;
           padding: 20px 0;
+          cursor: pointer;
           &.active { 
             background-color: $dark-grey; 
             box-shadow: inset 0px 0px 15px -2px rgba(0,0,0,0.75);
@@ -36,6 +46,9 @@
         }
       }
     }
+    
+    #contact-me,
+    #my-resume { display: none; }
 
     #contact-me {
       h1 { margin: 10px auto; }
