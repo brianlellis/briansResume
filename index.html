@@ -25,6 +25,7 @@
       <li><a href="#" class="modal contact" title="Navigate to contact">Contact</a></li>
     </ul>
   </nav>
+  <img id="site-badge" src="media/site-badge.png" alt="ADA compliancy badge" />
   <main>
     <section aria-label="main banner image of website" id="heroSlider">
       <h1>Do more,<br /><span>worry less.</span></h1>
@@ -43,10 +44,13 @@
         What I bring to the table for a company is not just my development experience. Through the years of professional growth I've acquired an extensive background in inbound sales, marketing, graphic design and video production and editing. One thing I've always done is to make sure if I can help in more ways than one to make a project successful I will. 
       </p>
     </section>
-    <section aria-label="Listing of certifications and awards" class="card-grid-slider card-4">
+    <section aria-label="Listing of certifications and awards" id="awards-and-certs" class="card-grid-slider card-4">
       <h1>Awards, Certifications &amp; Accomplishments</h1>
+      <nav>
+        <a class="control_next" href="#">NEXT</a>
+      </nav>
       <h3>Yeah, I'm pretty cool ;)</h3>
-      <ul>
+      <ul id="sliderHold">
         <li class="flipCard" title="top 100 elance">
           <img src="media/awards_and_more/elance.jpg" alt="accomplishment elance top 100" />
         </li>
@@ -79,7 +83,8 @@
         </li>
       </ul>
     </section>
-    <section aria-label="Grid of past clients and projects" class="card-grid-1 card-4">
+    <section aria-label="Grid of past clients and projects" class="clients card-grid-1 card-4">
+      <div id="past-client-overlay">See everyone I've had a pleasure to work with</div>
       <ul>
         <li title="past client bunulu">
           <a href="" title="web design details for bunulu">
@@ -101,9 +106,9 @@
             <img src="media/client_and_projects/lecreuset.jpg" alt="lecreuset company image" />
           </a>
         </li>
-        <li title="past client olympus">
+        <li title="past client signature hardwar">
           <a href="" title="web design details for olympus">
-            <img src="media/client_and_projects/olympus.jpg" alt="olympus company image" />
+            <img src="media/client_and_projects/signature_hardware.jpg" alt="olympus company image" />
           </a>
         </li>
         <li title="past client scout">

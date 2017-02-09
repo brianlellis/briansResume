@@ -20,13 +20,37 @@
   }
 }
 .card-grid-slider {
+  overflow: hidden;
+  position: relative;
+
   a { float: left; line-height: 0; }
+
+  nav {
+    position: absolute;
+    right: 1.5%;
+    border: 3px solid #000;
+    text-align: center;
+    padding: 5px 15px;
+    transition-duration: 500ms;
+    cursor: pointer;
+    
+    a {
+      float: none;
+      &:focus, &:hover { text-decoration: none; }
+    }
+    &:hover {
+      background-color: #000;
+      a { color: #FFF; }
+    }
+  }
+
   ul {
+    position: relative;
+    margin: 0;
     padding: 0;
     height: 300px;
     overflow-y: hidden;
-    overflow-x: visible;
-
+    transition-duration: 300ms;
     li { 
       box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.15);
       float: left; 

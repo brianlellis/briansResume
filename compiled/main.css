@@ -535,6 +535,12 @@ nav li {
   text-align: center;
   width: 20%; }
 
+#site-badge {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 135px; }
+
 footer {
   background-color: #444444;
   color: #FFF;
@@ -619,6 +625,8 @@ section[class^="col-"] {
   position: relative; }
   #heroSlider img {
     width: 100%; }
+    #heroSlider img.aboutpage {
+      margin-top: -50px; }
   #heroSlider h1, #heroSlider h2 {
     position: absolute;
     color: #FFF; }
@@ -646,28 +654,47 @@ section[class^="col-"] {
 .card-grid-2 li {
   float: left; }
 
-.card-grid-slider a {
-  float: left;
-  line-height: 0; }
-
-.card-grid-slider ul {
-  padding: 0;
-  height: 300px;
-  overflow-y: hidden;
-  overflow-x: visible; }
-  .card-grid-slider ul li {
-    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.15);
+.card-grid-slider {
+  overflow: hidden;
+  position: relative; }
+  .card-grid-slider a {
     float: left;
-    text-align: center; }
-
-.card-grid-slider.card-4 li {
-  height: 90%;
-  margin: 1%;
-  width: 23%; }
-  .card-grid-slider.card-4 li img {
-    max-height: 50%;
-    margin: 25% auto;
-    max-width: 100%; }
+    line-height: 0; }
+  .card-grid-slider nav {
+    position: absolute;
+    right: 1.5%;
+    border: 3px solid #000;
+    text-align: center;
+    padding: 5px 15px;
+    transition-duration: 500ms;
+    cursor: pointer; }
+    .card-grid-slider nav a {
+      float: none; }
+      .card-grid-slider nav a:focus, .card-grid-slider nav a:hover {
+        text-decoration: none; }
+    .card-grid-slider nav:hover {
+      background-color: #000; }
+      .card-grid-slider nav:hover a {
+        color: #FFF; }
+  .card-grid-slider ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 300px;
+    overflow-y: hidden;
+    transition-duration: 300ms; }
+    .card-grid-slider ul li {
+      box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.15);
+      float: left;
+      text-align: center; }
+  .card-grid-slider.card-4 li {
+    height: 90%;
+    margin: 1%;
+    width: 23%; }
+    .card-grid-slider.card-4 li img {
+      max-height: 50%;
+      margin: 25% auto;
+      max-width: 100%; }
 
 .card-grid-1 a,
 .card-grid-2 a {
@@ -816,3 +843,20 @@ section[class^="col-"] {
       background-color: #b2d847; }
     .lang-badges li.actionscript {
       background-color: #cc6699; }
+
+.clients {
+  position: relative; }
+  .clients #past-client-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 14% 0 20% 0;
+    text-align: center;
+    font-size: 32px;
+    text-decoration: underline;
+    opacity: 0;
+    transition: opacity 300ms;
+    cursor: pointer; }
+    .clients #past-client-overlay:hover {
+      opacity: 1; }

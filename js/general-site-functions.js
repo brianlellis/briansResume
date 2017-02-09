@@ -1,18 +1,48 @@
-var siteCore = siteCore || {}; // Check if object is present first
-
-siteCore.modal = (function ($) {
+var siteCore = (function ($) {
   var _self, // Setting up a shared private var for this object ref
+      pageURL = window.location.href, // Get current page's url
       mainNav = $('body > nav .modal'), // Website top nav
       modal = $('#modal-overlay'), // Black modal overlay 
       modalBox = $('#modal-overlay .modal-box'), // Modal box on top of container
       contactSect = $('#contact-me'), // modal box contact section
-      resumeSect = $('#my-resume');  // modal box resume section
+      resumeSect = $('#my-resume'),  // modal box resume section
+
+      // Index page selectors
+      clientPictures,
+      slideCount, 
+      slideWidth, 
+      slideHeight,
+      sliderUlWidth,
+
+      // Projects page selectors
+      a,
+
+      // About page selectors
+      b,
+
+      // Learning page selectors
+      c;
 
   return {
     init: function () {
       _self = this;
 
-      _self.observers();
+      _self.observers(); // General site observers
+
+      // PAGE SPECCIFIC FUNCTIONS
+      if (pageURL.indexOf("index") > 0) {
+        awardCards = $('#awards-and-certs');
+        clientPictures = $('main section.clients');
+
+        _self.awardsAndCerts(); // awards and certs flipcard
+        _self.goToClients(); // goes to clients page for client grid
+      } else if (pageURL.indexOf("about") > 0) {
+
+      } else if (pageURL.indexOf("learning") > 0) {
+
+      } else if (pageURL.indexOf("past-projects") > 0) {
+        _self.clientGrid();
+      }
     },
     observers: function () {
       _self.modalOpenClose();
@@ -61,8 +91,48 @@ siteCore.modal = (function ($) {
           }
         }
       });
+    },
+    /**
+      * index page functions
+    **/
+    awardsAndCerts: function () {
+      slideWidth = $('#sliderHold li').width();
+      
+      $('#sliderHold').width(6 * slideWidth);
+      $('#sliderHold li').width(slideWidth);
+      $('#awards-and-certs').width(4.25 * slideWidth);
+
+      // Sets auto slide interval
+      var autoSlide = setInterval(function () {
+        $('#sliderHold li:eq(0)').animate({
+            marginLeft: - slideWidth * 1.2 // Multiplier ex 1.2 affects amount of slides to go past
+        }, 'slow', function () {
+            $('#sliderHold li:first-child').css('marginLeft','').appendTo('#sliderHold');
+        });
+      }, 5000);
+
+      $('a.control_next').click(function (e) {
+        e.preventDefault();
+        _self.sliderMoveRight();
+        clearInterval(autoSlide);
+      });
+    },
+    sliderMoveRight: function() {
+      $('#sliderHold li:eq(0)').animate({
+          marginLeft: - slideWidth * 1.2 // Multiplier ex 1.2 affects amount of slides to go past
+      }, 'slow', function () {
+          $('#sliderHold li:first-child').css('marginLeft','').appendTo('#sliderHold');
+      });
+    },
+    goToClients: function () {
+      clientPictures.click(function(event) {
+        window.location.href = "past-projects.html";
+      });
     }
+    /**
+      * about page functions
+    **/
   }
 })(jQuery);
 
-siteCore.modal.init();
+siteCore.init();

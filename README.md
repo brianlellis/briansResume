@@ -5,6 +5,7 @@
  * Finish about page imagery
  * Add github, codepen and contact info to footer
  * Add ADA badge to header
+ * Flyout navigation meu
 
 ##Branch Naming Conventions
  * master - Contains the most stable recent version of the site
