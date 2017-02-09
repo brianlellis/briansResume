@@ -618,6 +618,23 @@ section[class^="col-"] {
   border: none;
   padding: 10px 15px; }
 
+section.bannerBar {
+  padding: 10px 5%;
+  background-color: #000;
+  margin: 20px 0 40px 0; }
+  section.bannerBar h1 {
+    color: #FFF;
+    margin: 0; }
+  section.bannerBar p {
+    margin: 0;
+    margin-bottom: 15px;
+    color: #FFF;
+    line-height: 1;
+    font-size: 24px; }
+
+section.codepens h1 {
+  margin: 60px 0 10px 0; }
+
 #heroSlider {
   padding: 0;
   height: 560px;
@@ -843,6 +860,9 @@ section[class^="col-"] {
       background-color: #b2d847; }
     .lang-badges li.actionscript {
       background-color: #cc6699; }
+
+.cp_embed_wrapper {
+  margin-bottom: 40px; }
 
 .clients {
   position: relative; }

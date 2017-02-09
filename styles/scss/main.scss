@@ -26,11 +26,13 @@
 // 5. Components
 @import
   'components/button',
+  'components/sections',
   'components/hero-slider',
   'components/card-grid',
   'components/modal',
   'components/phaser',
-  'components/lang-badges';
+  'components/lang-badges',
+  'components/codepen';
 
 // 6. Page-specific styles
 @import
