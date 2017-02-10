@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "I DID RUN!!!!"
+
 set -xe # print exit on first failure
 
 if [$TRAVIS_BRANCH == "staging"] ; then
