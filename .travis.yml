@@ -10,7 +10,7 @@ before_install:
   -in travis_rsa.enc -out ~/.ssh/travis_rsa -d
 - chmod 600 ~/.ssh/travis_rsa # required! If not the key wil be unprotected and not allowed
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config # bypass Github authenticity
-- echo -e "Host briansume.com\n\tStrictHostKeyChecking\n" >> ~/.ssh/congig # bypass Github authenticity
+- echo -e "Host briansresume.com\n\tStrictHostKeyChecking\n" >> ~/.ssh/congig # bypass Github authenticity
 install:
 - npm install -g gulp
 - npm install
