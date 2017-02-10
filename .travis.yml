@@ -15,10 +15,10 @@ install:
 build: 
 script: gulp travis
 deploy:
-  skip_cleanup: true
-  provider: script
-  script: ".travis/deploy.sh"
-  on:
-    all_branches: true
+- eval "$(ssh-agent -s)" # start ssh agent
+- ssh-add ~/.ssh/travis_rsa
+- git remote add deploy "travis@briansresume.com:/var/www/html" # deploy to html default
+- git config user.name "TravisCI"
+- git config user.email "travisdeploy@briansresume.com"git push -f deploy HEAD:staging # exec deploy method
 notifications:
   email: false
