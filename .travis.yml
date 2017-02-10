@@ -11,9 +11,8 @@ before_install:
 install:
 - npm install -g gulp
 - npm install
-- ls -a
 build: 
-script: gulp travis && echo ls
+script: gulp travis
 deploy:
   skip_cleanup: true
   provider: script
