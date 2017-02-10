@@ -6,10 +6,8 @@ branches:
   - master
   - staging
 before_install:
-- openssl aes-256-cbc -K $encrypted_cf4392f631c3_key -iv $encrypted_cf4392f631c3_iv
+- openssl aes-256-cbc -K $encrypted_abf29013d87f_key -iv $encrypted_abf29013d87f_iv
   -in travis_rsa.enc -out travis_rsa -d
-- openssl aes-256-cbc -K $encrypted_b0b2958c016f_key -iv $encrypted_b0b2958c016f_iv
-  -in .travis/travis_rsa.enc -out ~/.ssh/travis_rsa -d
 - chmod 600 ~/.ssh/travis_rsa
 install:
 - npm install -g gulp
