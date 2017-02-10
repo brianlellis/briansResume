@@ -10,7 +10,8 @@ if [ "$TRAVIS_BRANCH" == 'staging' ]; then
         ssh-add ~/.ssh/travis_rsa 
 	git remote add deploy "travis@briansresume.com:/var/www/html" # deploy to html default
 	git config user.name "TravisCI"
-	git config user.email "travisdeploy@briansresume.com"git push -f deploy HEAD:staging # exec deploy method
+	git config user.email "travisdeploy@briansresume.com"
+        git push -f deploy HEAD:staging # exec deploy method
 else
 	echo "Deployments only occur with staging branch. You are currently using '$TRAVIS_BRANCH'"
 fi
