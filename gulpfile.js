@@ -111,3 +111,13 @@ gulp.task('build', ['images', 'jshint', 'js-compile', 'sass-styles', 'sassdoc', 
 gulp.task('build-watch', ['browser-sync'], function () {
     gulp.watch('*', ['html5-lint', 'jshint', 'js-compile', 'sass-styles', 'sassdoc', 'jsdoc']);
 });
+
+/**
+ * TRAVIS BUILD TASKS
+ */
+
+gulp.task('travis', ['build', 'testServerJs'], function () {
+	process.exit(0);
+});
+
+

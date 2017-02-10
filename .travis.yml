@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+ - "stable" # tells build to use latest stable node build
+install: # install placeholder
+build: # build placeholder
+script: gulpt travis # gulp task specifically for travis build
+deploy: # deploy placeholder
+
