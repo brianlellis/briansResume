@@ -116,7 +116,7 @@ gulp.task('build-watch', ['browser-sync'], function () {
  * TRAVIS BUILD TASKS
  */
 
-gulp.task('travis', ['build', 'testServerJs'], function () {
+gulp.task('travis', function () {
 	process.exit(0);
 });
 
