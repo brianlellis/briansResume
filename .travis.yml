@@ -20,5 +20,3 @@ deploy:
 - git remote add deploy "travis@briansresume.com:/var/www/html" # deploy to html default
 - git config user.name "TravisCI"
 - git config user.email "travisdeploy@briansresume.com"git push -f deploy HEAD:staging # exec deploy method
-notifications:
-  email: false
