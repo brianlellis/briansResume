@@ -695,33 +695,33 @@ section#site-resources {
   section#site-resources .placard.animate a {
     opacity: 0; }
   section#site-resources .placard.animate.digOcean img {
-    top: 750px;
+    top: 650px;
     left: -100px;
     width: 200px; }
   section#site-resources .placard.animate.github img {
-    top: 400px;
+    top: 320px;
     left: -150px;
     width: 170px; }
   section#site-resources .placard.animate.cucumber img {
-    top: 700px;
+    top: 520px;
     left: -250px; }
   section#site-resources .placard.animate.travis img {
-    top: 500px;
+    top: 420px;
     left: -150px;
     width: 130px; }
   section#site-resources .placard.animate.html5 img {
-    top: 200px;
+    top: 120px;
     width: 120px; }
   section#site-resources .placard.animate.sass img {
-    top: 500px;
+    top: 420px;
     left: -180px;
     width: 150px; }
   section#site-resources .placard.animate.less img {
-    top: 700px;
+    top: 600px;
     left: -200px;
     width: 120px; }
   section#site-resources .placard.animate.jquery img {
-    top: 400px;
+    top: 340px;
     left: -400px;
     width: 200px; }
 
@@ -984,7 +984,7 @@ section#site-resources {
 
 #site-resources .showcaseMessage {
   position: fixed;
-  top: 50px;
+  top: 20px;
   left: 240px;
   opacity: 0;
   display: none;
