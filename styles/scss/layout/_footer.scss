@@ -10,5 +10,6 @@ footer {
   letter-spacing: 1px;
   transition-duration: 500ms;
   opacity: 1;
+  clear: both;
   &.animate { margin-top: 200px; opacity: 0; }
 }

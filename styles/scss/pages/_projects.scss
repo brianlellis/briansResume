@@ -1,0 +1,36 @@
+#project-overview {
+  text-align: center;
+}
+#project-billboards {
+  li {
+    background-color: #000;
+    img { 
+      transition-duration: 500ms;
+      opacity: 1; 
+    }
+    &:hover {
+      img {
+        filter: blur(4px);
+        filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+        opacity: 0.5;
+      }
+    }
+  }
+}
+#design-portfolio {
+  height: 1000px;
+}
+#video-portfolio {
+  iframe { width: 420px; height: 250px; }
+}
+
+#project-overview,
+#design-portfolio,
+#video-portfolio {
+  &.col-2, &.col-4 {
+    div { 
+      text-align: center;
+      float: left;
+    } 
+  }
+}
