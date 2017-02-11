@@ -546,7 +546,10 @@ footer {
   color: #FFF;
   text-align: right;
   padding: 15px 30px;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  transition-duration: 500ms; }
+  footer.animate {
+    margin-top: 200px; }
 
 section[class^="col-"] {
   clear: both; }
@@ -634,6 +637,56 @@ section.bannerBar {
 
 section.codepens h1 {
   margin: 60px 0 10px 0; }
+
+section#site-resources {
+  transition-duration: 2000ms;
+  height: 0; }
+  section#site-resources.active {
+    height: 3000px; }
+  section#site-resources canvas {
+    position: fixed;
+    bottom: -105%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition-duration: 1300ms;
+    opacity: .5; }
+  section#site-resources.active canvas {
+    bottom: -30%; }
+  section#site-resources .showcaseMessage.animate {
+    opacity: 1; }
+  section#site-resources .placard.animate a {
+    opacity: 0; }
+  section#site-resources .placard.animate.digOcean img {
+    top: 750px;
+    left: -100px;
+    width: 200px; }
+  section#site-resources .placard.animate.github img {
+    top: 400px;
+    left: -150px;
+    width: 170px; }
+  section#site-resources .placard.animate.cucumber img {
+    top: 700px;
+    left: -250px; }
+  section#site-resources .placard.animate.travis img {
+    top: 500px;
+    left: -150px;
+    width: 130px; }
+  section#site-resources .placard.animate.html5 img {
+    top: 200px;
+    width: 120px; }
+  section#site-resources .placard.animate.sass img {
+    top: 500px;
+    left: -180px;
+    width: 150px; }
+  section#site-resources .placard.animate.less img {
+    top: 700px;
+    left: -200px;
+    width: 120px; }
+  section#site-resources .placard.animate.jquery img {
+    top: 400px;
+    left: -400px;
+    width: 200px; }
 
 #heroSlider {
   padding: 0;
@@ -883,8 +936,20 @@ section.codepens h1 {
 
 #site-resources .placard {
   cursor: pointer; }
-  #site-resources .placard:hover {
-    animation: spin 500ms 1 ease-in; }
+  #site-resources .placard img {
+    transition-duration: 2000ms; }
+  #site-resources .placard a {
+    transition-duration: 500ms;
+    opacity: 1; }
+  #site-resources .placard.spinning {
+    animation: spin 1s ease-in; }
+
+#site-resources .showcaseMessage {
+  position: fixed;
+  top: 50px;
+  left: 240px;
+  opacity: 0;
+  transition: opacity 2000ms; }
 
 @-webkit-keyframes spin {
   0% {

@@ -26,7 +26,19 @@
 #site-resources {
   .placard {
     cursor: pointer;
-    &:hover { animation: spin 500ms 1 ease-in; }
+    img { transition-duration: 2000ms; }
+    a { 
+      transition-duration: 500ms; 
+      opacity: 1; 
+    }
+    &.spinning { animation: spin 1s ease-in; }
+  }
+  .showcaseMessage {
+    position: fixed;
+    top: 50px;
+    left: 240px;
+    opacity: 0;
+    transition: opacity 2000ms;
   }
 }
 @-webkit-keyframes spin {

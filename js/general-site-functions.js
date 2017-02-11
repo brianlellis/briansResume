@@ -15,6 +15,8 @@ var siteCore = (function ($) {
       sliderUlWidth,
       autoSlide,
       autoSlideStopped,
+      siteResourceSection,
+      resourceImages,
 
       // Projects page selectors
       a,
@@ -43,9 +45,14 @@ var siteCore = (function ($) {
       else {
         awardCards = $('#awards-and-certs');
         clientPictures = $('main section.clients');
+        siteResourceSection = $('#site-resources');
+        resourceImages = $('#site-resources .placard');
 
         _self.awardsAndCerts(); // awards and certs flipcard
         _self.goToClients(); // goes to clients page for client grid
+        _self.resourceShowcase(); // bottom section resources
+        _self.resourceImgSpin(); // smooth spin animation
+        _self.freezeScroll(); // freezes scroll without using CSS
       }
     },
     observers: function () {
@@ -143,6 +150,73 @@ var siteCore = (function ($) {
       clientPictures.click(function(event) {
         window.location.href = "past-projects.html";
       });
+    },
+    resourceShowcase: function () {
+      var curScroll;
+
+      siteResourceSection.click(function () {
+        if (! $(this).hasClass('active') && ! $(this).hasClass('wait') ) {
+
+          curScroll = $(document).scrollTop(); // get cur scroll val
+
+          // smooth animation to cover screen
+          $('html, body').animate({
+             scrollTop: $(this).find('.placard').offset().top
+          }, 1500);
+
+          // class additions to animate elements
+          $(this).addClass('active wait'); // section
+
+          _self.waiter($(this), 'wait', 800);
+
+          $('.showcaseMessage').show();
+
+          _self.waiter($('.showcaseMessage'), 'animate', 1000, 'add');
+          
+          resourceImages.addClass('animate');
+          
+          $('footer').addClass('animate');
+
+        } else if ($(this).hasClass('active') && !$(this).hasClass('wait') ) { 
+          $('html, body').animate({
+             scrollTop: curScroll - 60
+          }, 1000);
+          $(this).removeClass('active').addClass('wait');
+           _self.waiter($(this), 'wait', 1000);
+           resourceImages.removeClass('animate');
+           $('.showcaseMessage').removeClass('animate').hide();
+           $('footer').removeClass('animate');
+        }
+      });
+    },
+    resourceImgSpin: function () {
+      resourceImages.hover(function() {
+        if (!$(this).hasClass('spinning') && !siteResourceSection.hasClass('active')) {
+          $(this).addClass('spinning');
+          _self.waiter($(this), 'spinning', 1000);
+        } 
+      });
+    },
+    waiter: function (ele, selector, time, action) {
+      if (action === 'add') {
+        setTimeout(function () {
+          ele.addClass(selector);
+        }, time);
+      } else {
+        setTimeout(function () {
+          ele.removeClass(selector);
+        }, time);
+      }
+    },
+    freezeScroll: function () {
+      $('body').on({
+          'mousewheel': function(e) {
+            if (siteResourceSection.hasClass('active') || siteResourceSection.hasClass('wait') ) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+          }
+      })
     }
     /**
       * about page functions
