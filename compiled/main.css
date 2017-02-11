@@ -1041,14 +1041,38 @@ section#site-resources {
   text-align: center; }
 
 #project-billboards li {
+  position: relative;
   background-color: #000; }
+  #project-billboards li a, #project-billboards li h1, #project-billboards li h2, #project-billboards li p {
+    position: absolute;
+    opacity: 0;
+    transition-duration: 500ms;
+    color: #FFF;
+    z-index: 1;
+    left: 5%;
+    text-shadow: 2px 2px 2px #000; }
+  #project-billboards li a {
+    display: none;
+    bottom: 30px; }
+  #project-billboards li h1 {
+    font-size: 24px;
+    top: -5px; }
+  #project-billboards li h2 {
+    top: 10px; }
+  #project-billboards li p {
+    line-height: 1;
+    top: 70px; }
   #project-billboards li img {
     transition-duration: 500ms;
+    opacity: 1;
+    float: left; }
+  #project-billboards li:hover a, #project-billboards li:hover h1, #project-billboards li:hover h2, #project-billboards li:hover p {
+    display: block;
     opacity: 1; }
   #project-billboards li:hover img {
     filter: blur(4px);
     filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
-    opacity: 0.5; }
+    opacity: 0.3; }
 
 #design-portfolio {
   height: 1000px; }

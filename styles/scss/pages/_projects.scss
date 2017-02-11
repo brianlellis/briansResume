@@ -3,16 +3,42 @@
 }
 #project-billboards {
   li {
+    position: relative;
     background-color: #000;
+
+    a, h1, h2, p {
+      position: absolute;
+      opacity: 0;
+      transition-duration: 500ms;
+      color: #FFF;
+      z-index: 1;
+      left: 5%;
+      text-shadow: 2px 2px 2px #000;
+    }
+    a { display: none; bottom: 30px; }
+    h1 { 
+          font-size: 24px;
+          top: -5px;
+      }
+      h2 { top: 10px; }
+      p {
+        line-height: 1;
+        top: 70px;
+      }
     img { 
       transition-duration: 500ms;
       opacity: 1; 
+      float: left;
     }
     &:hover {
+      a, h1, h2, p {
+        display: block;
+        opacity: 1;
+      }
       img {
         filter: blur(4px);
         filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
-        opacity: 0.5;
+        opacity: 0.3;
       }
     }
   }
