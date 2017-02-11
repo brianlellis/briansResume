@@ -547,9 +547,11 @@ footer {
   text-align: right;
   padding: 15px 30px;
   letter-spacing: 1px;
-  transition-duration: 500ms; }
+  transition-duration: 500ms;
+  opacity: 1; }
   footer.animate {
-    margin-top: 200px; }
+    margin-top: 200px;
+    opacity: 0; }
 
 section[class^="col-"] {
   clear: both; }
@@ -654,7 +656,8 @@ section#site-resources {
   section#site-resources.active canvas {
     bottom: -30%; }
   section#site-resources .showcaseMessage.animate {
-    opacity: 1; }
+    opacity: 1;
+    display: block; }
   section#site-resources .placard.animate a {
     opacity: 0; }
   section#site-resources .placard.animate.digOcean img {
@@ -824,9 +827,9 @@ section#site-resources {
   height: 100%;
   left: 0;
   position: fixed;
-  top: -100%;
+  top: -120%;
   width: 100%;
-  transition-duration: 500ms; }
+  transition-duration: 600ms; }
   #modal-overlay .closeButton {
     position: absolute;
     top: 25px;
@@ -838,9 +841,9 @@ section#site-resources {
   #modal-overlay .modal-box {
     background-color: #FFF;
     border: 1px solid #444444;
-    height: 600px;
+    height: 560px;
     left: 0;
-    margin: 7% auto;
+    margin: 5% auto;
     position: absolute;
     right: 0;
     width: 740px; }
@@ -940,7 +943,8 @@ section#site-resources {
     transition-duration: 2000ms; }
   #site-resources .placard a {
     transition-duration: 500ms;
-    opacity: 1; }
+    opacity: 1;
+    pointer-events: none; }
   #site-resources .placard.spinning {
     animation: spin 1s ease-in; }
 
@@ -949,7 +953,13 @@ section#site-resources {
   top: 50px;
   left: 240px;
   opacity: 0;
+  display: none;
   transition: opacity 2000ms; }
+
+#site-resources p.showcaseMessage {
+  top: initial;
+  bottom: 10px;
+  left: 20px; }
 
 @-webkit-keyframes spin {
   0% {
@@ -958,3 +968,34 @@ section#site-resources {
     -webkit-transform: rotateY(180deg); }
   100% {
     -webkit-transform: rotateY(0deg); } }
+
+#programming-lang-logos li {
+  height: 100px;
+  line-height: 100px;
+  color: #FFF;
+  font-size: 28px;
+  background-color: #444444;
+  box-shadow: inset 0px 0px 50px -2px rgba(0, 0, 0, 0.33); }
+  #programming-lang-logos li.vb5, #programming-lang-logos li.haskell {
+    background-color: #ce5050; }
+  #programming-lang-logos li.actionScript {
+    background-color: #ce6ec8;
+    font-size: 20px; }
+  #programming-lang-logos li.bash {
+    background-color: #e2c021; }
+  #programming-lang-logos li.xml {
+    background-color: #7bc565; }
+  #programming-lang-logos li.vba {
+    background-color: #658dcc; }
+  #programming-lang-logos li.gas {
+    background-color: #7bc0ca; }
+  #programming-lang-logos li.html5 {
+    background-color: #d89b45; }
+  #programming-lang-logos li.css3 {
+    background-color: #e299de; }
+  #programming-lang-logos li.javascript {
+    background-color: #8177da; }
+  #programming-lang-logos li.php {
+    background-color: #76bb61; }
+  #programming-lang-logos li.swift3 {
+    background-color: #74a5f1; }

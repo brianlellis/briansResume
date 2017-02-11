@@ -33,12 +33,21 @@ var siteCore = (function ($) {
 
       _self.observers(); // General site observers
 
-      // PAGE SPECCIFIC FUNCTIONS
+      /** 
+       * PAGE SPECCIFIC FUNCTIONS
+      **/
+      // about
       if (pageURL.indexOf("about") > 0) {
+        carouselHolder = $('carouselHolder');
 
-      } else if (pageURL.indexOf("learning") > 0) {
+        _self.infiniteCarousel();
+      } 
+      // learning
+      else if (pageURL.indexOf("learning") > 0) {
 
-      } else if (pageURL.indexOf("past-projects") > 0) {
+      } 
+      // past projects
+      else if (pageURL.indexOf("past-projects") > 0) {
         _self.clientGrid();
       } 
       // default for index page
@@ -107,11 +116,11 @@ var siteCore = (function ($) {
       * index page functions
     **/
     awardsAndCerts: function () {
-      slideWidth = $('#sliderHold li').width();
+      slideWidth = $('#sliderHold li').width(); // get initial value of li before slide design
       
-      $('#sliderHold').width(6 * slideWidth);
-      $('#sliderHold li').width(slideWidth);
-      $('#awards-and-certs').width(4.25 * slideWidth);
+      $('#sliderHold').width(6 * slideWidth); // made ul wide enough to go past overflow parent container
+      $('#sliderHold li').width(slideWidth); // overwrite css % val to prev recorded val
+      $('#awards-and-certs').width(4.25 * slideWidth); // set width of slider parent width to overflow hide the ul
 
       _self.autoSlide();
 
@@ -152,7 +161,7 @@ var siteCore = (function ($) {
       });
     },
     resourceShowcase: function () {
-      var curScroll;
+      var curScroll; // kept out of click closure so its not recommited to memory each time
 
       siteResourceSection.click(function () {
         if (! $(this).hasClass('active') && ! $(this).hasClass('wait') ) {
@@ -165,27 +174,25 @@ var siteCore = (function ($) {
           }, 1500);
 
           // class additions to animate elements
-          $(this).addClass('active wait'); // section
-
-          _self.waiter($(this), 'wait', 800);
-
-          $('.showcaseMessage').show();
-
-          _self.waiter($('.showcaseMessage'), 'animate', 1000, 'add');
-          
-          resourceImages.addClass('animate');
-          
-          $('footer').addClass('animate');
+          $(this).addClass('active wait'); // #site-resources
+          _self.waiter($(this), 'wait', 800); // #site-resources
+          $('.showcaseMessage').show(); // #site-resources h2
+          _self.waiter($('.showcaseMessage'), 'animate', 1000, 'add'); // #site-resources h2
+          resourceImages.addClass('animate'); // #site-resources .placard
+          $('footer').addClass('animate'); // footer
 
         } else if ($(this).hasClass('active') && !$(this).hasClass('wait') ) { 
+          // smooth animation to uncover screen
           $('html, body').animate({
              scrollTop: curScroll - 60
           }, 1000);
-          $(this).removeClass('active').addClass('wait');
-           _self.waiter($(this), 'wait', 1000);
-           resourceImages.removeClass('animate');
-           $('.showcaseMessage').removeClass('animate').hide();
-           $('footer').removeClass('animate');
+
+          // class removals to animate elements
+          $(this).removeClass('active').addClass('wait'); // #site-resources
+           _self.waiter($(this), 'wait', 1000); // #site-resources
+           resourceImages.removeClass('animate'); // #site-resources .placard
+           $('.showcaseMessage').removeClass('animate').hide(); // #site-resources h2
+           $('footer').removeClass('animate'); // footer
         }
       });
     },

@@ -1,0 +1,44 @@
+#programming-lang-logos {
+  li {
+    height: 100px;
+    line-height: 100px;
+    color: #FFF;
+    font-size: 28px;
+    background-color: $dark-grey; 
+    box-shadow: inset 0px 0px 50px -2px rgba(0,0,0,0.33);
+    &.vb5, &.haskell { 
+      background-color: #ce5050; 
+    }
+    &.actionScript { 
+      background-color: #ce6ec8;
+      font-size: 20px;
+    }
+    &.bash { 
+      background-color: #e2c021; 
+    }
+    &.xml { 
+      background-color: #7bc565; 
+    }
+    &.vba { 
+      background-color: #658dcc; 
+    }
+    &.gas { 
+      background-color: #7bc0ca; 
+    }
+    &.html5 { 
+      background-color: #d89b45; 
+    }
+    &.css3 { 
+      background-color: #e299de; 
+    }
+    &.javascript { 
+      background-color: #8177da; 
+    }
+    &.php { 
+      background-color: #76bb61; 
+    }
+    &.swift3 { 
+      background-color: #74a5f1; 
+    }
+  }
+}

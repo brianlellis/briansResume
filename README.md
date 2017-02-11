@@ -1,11 +1,11 @@
-#release C
- * Complete JS functionality for site animations and behavior
- * Finish past projects logo billboard
- * Finish resume/contact modal info
- * Finish about page imagery
- * Add github, codepen and contact info to footer
- * Add ADA badge to header
- * Flyout navigation meu
+#release D
+ * Add html5 canvase to home resource section
+ * fully comment current code, including CSS
+ * put mapping of partials in README for scss dir for each page
+
+#TODO CONSIDERATIONS
+ * refactor scss to scope animations to one partial
+ * refactor site resources section to one partial
 
 ##Branch Naming Conventions
  * master - Contains the most stable recent version of the site

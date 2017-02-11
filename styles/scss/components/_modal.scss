@@ -5,9 +5,9 @@
   height: 100%;
   left: 0;
   position: fixed;
-  top: -100%;
+  top: -120%;
   width: 100%;
-  transition-duration: 500ms;
+  transition-duration: 600ms;
 
   .closeButton { 
     position: absolute; 
@@ -21,9 +21,9 @@
   .modal-box {
     background-color: #FFF;
     border: 1px solid $dark-grey;
-    height: 600px;
+    height: 560px;
     left: 0;
-    margin: 7% auto;
+    margin: 5% auto;
     position: absolute;
     right: 0;
     width: 740px;

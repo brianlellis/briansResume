@@ -32,7 +32,7 @@ section {
     &.active {
       canvas { bottom: -30%; }
     }
-    .showcaseMessage.animate { opacity: 1; }
+    .showcaseMessage.animate { opacity: 1; display: block; }
     .placard.animate {
       a { opacity: 0; }
 

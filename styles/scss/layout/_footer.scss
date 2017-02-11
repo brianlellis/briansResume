@@ -9,5 +9,6 @@ footer {
   padding: $base-pad/2 $base-pad;
   letter-spacing: 1px;
   transition-duration: 500ms;
-  &.animate { margin-top: 200px; }
+  opacity: 1;
+  &.animate { margin-top: 200px; opacity: 0; }
 }
