@@ -3,13 +3,15 @@ section {
     padding: 10px 5%;
     background-color: #000;
     margin: 20px 0 40px 0;
-    h1 { color: #FFF; margin: 0; }
+    text-align: left;
+    h1 { color: #FFF; margin: 0; text-align: left; }
     p {
       margin: 0;
       margin-bottom: 15px;
       color: #FFF;
       line-height: 1;
       font-size: 24px;
+      text-align: left;
     }
   }
   &.codepens {
