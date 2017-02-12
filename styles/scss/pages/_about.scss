@@ -1,4 +1,7 @@
 #programming-lang-logos {
+  @include breakpoint($bp-xlarge) {
+    margin: 0;
+  }
   li {
     height: 100px;
     line-height: 100px;
@@ -6,18 +9,40 @@
     font-size: 28px;
     background-color: $dark-grey; 
     box-shadow: inset 0px 0px 50px -2px rgba(0,0,0,0.33);
+
+    @include breakpoint($bp-xlarge) {
+      font-size: 16px;
+      height: 80px;
+      line-height: 80px;
+    }
+    @include breakpoint($bp-large) { width: 8.17%; }
+    @include breakpoint($bp-medium) { width: 9.65%; }
+    @include breakpoint($bp-mobileLandscape) { width: 10.8%; }
+    @include breakpoint($bp-small) { width: 13.75%; }
+    @include breakpoint($bp-xsmall) { width: 19.25%; }
+
     &.vb5, &.haskell { 
-      background-color: #ce5050; 
+      background-color: #ce5050;
+      @include breakpoint($bp-mobileLandscape) { display: none; }
+    }
+    &.haskell {
+      @include breakpoint($bp-medium) { display: none; } 
     }
     &.actionScript { 
       background-color: #ce6ec8;
       font-size: 20px;
+      @include breakpoint($bp-xlarge) { font-size: 16px; }
+      @include breakpoint($bp-large) { width: 10%; }
+      @include breakpoint($bp-medium) { display: none; }
     }
     &.bash { 
-      background-color: #e2c021; 
+      background-color: #e2c021;
+      @include breakpoint($bp-mobileLandscape) { background-color: #ce5050; } 
+      @include breakpoint($bp-small) { display: none; }
     }
     &.xml { 
-      background-color: #7bc565; 
+      background-color: #7bc565;
+      @include breakpoint($bp-xsmall) { display: none; }  
     }
     &.vba { 
       background-color: #658dcc; 
@@ -32,13 +57,19 @@
       background-color: #e299de; 
     }
     &.javascript { 
-      background-color: #8177da; 
+      background-color: #8177da;
+      @include breakpoint($bp-medium) { width: 13%; } 
+      @include breakpoint($bp-small) { width: 17.5%; }
+      @include breakpoint($bp-xsmall) { width: 23%; }
     }
     &.php { 
       background-color: #76bb61; 
+      @include breakpoint($bp-xsmall) { display: none; }
     }
     &.swift3 { 
       background-color: #74a5f1; 
+      @include breakpoint($bp-medium) { background-color: #ce5050; }
+      @include breakpoint($bp-small) { display: none; }
     }
   }
 }
