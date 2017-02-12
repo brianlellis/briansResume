@@ -8,7 +8,8 @@
   overflow: hidden;
   position: relative;
   @include breakpoint($bp-large) { height: 450px; }
-
+  @include breakpoint($bp-mobileLandscape) { height: 270px; }
+  @include breakpoint($bp-small) { height: auto; padding-bottom: 0; }
   img {
     width: 100%;
     &.aboutpage { margin-top: -50px; }
@@ -16,6 +17,7 @@
   h1, h2 {
     position: absolute;
     color: #FFF;
+    @include breakpoint($bp-medium) { text-shadow: 0 0 14px #000; }
   }
   h1 {
     top: 100px;
@@ -23,14 +25,20 @@
     line-height: 50px;
     font-size: 64px;
     @include breakpoint($bp-large) { top: 60px; left: 30px; }
-
+    @include breakpoint($bp-mobileLandscape) { 
+      font-size: 50px;
+      top: 20px; 
+    }
     span {
       margin-left: 100px;
+      @include breakpoint($bp-small) { margin-left: 40px; }
     }
   }
   h2 {
     bottom: 130px;
     left: 210px;
     @include breakpoint($bp-large) { left: 60px; }
+    @include breakpoint($bp-mobileLandscape) { bottom: 20px; }
+    @include breakpoint($bp-small) { display: none; }
   }
 }

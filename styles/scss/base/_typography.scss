@@ -5,3 +5,12 @@ body {
   color: $text-color;
   font: normal 125% / 1.4 $font-sans;
 }
+
+p {
+  @include breakpoint($bp-small) { text-align: justify; font-size: 1em; }
+}
+
+h1, h2, h3 {
+  @include breakpoint($bp-small) { font-size: 1.25em; }
+}
+

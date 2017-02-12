@@ -7,10 +7,8 @@
   top: 0;
   right: 10px;
   width: 135px;
-
-  @include breakpoint($bp-large) {
-    width: 100px;
-  }
+  @include breakpoint($bp-large) { width: 100px; }
+  @include breakpoint($bp-xsmall) { display: none; }
 }
 
 .clients {
@@ -26,6 +24,11 @@
     opacity: 0;
     transition: opacity 300ms;
     cursor: pointer;
+    @include breakpoint($bp-mobileLandscape) { 
+      font-size: 22px; 
+      padding: 15% 5%;;
+    }
+    @include breakpoint($bp-small) { padding: 7% 5% 12%; }
 
     &:hover {
       opacity: 1;
