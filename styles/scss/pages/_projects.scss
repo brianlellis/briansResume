@@ -5,6 +5,12 @@
   li {
     position: relative;
     background-color: #000;
+    @include breakpoint($bp-large) { width: 33%; }
+    @include breakpoint($bp-mobileLandscape) { width: 50%; }
+    @include breakpoint($bp-small) { 
+      width: 100%;
+      &:nth-child(n+6) { display: none; } 
+    }
 
     a, h1, h2, p {
       position: absolute;
@@ -19,14 +25,33 @@
     a { display: none; bottom: 30px;  cursor: pointer; }
     h1 { 
           font-size: 21px;
-          top: -5px;
+          top: 5px;
+
+          @include breakpoint($bp-xlarge) { font-size: 18px; line-height: 1.15; }
+          @include breakpoint($bp-medium) { font-size: 16px; top: 10px; }
+          @include breakpoint($bp-mobileLandscape) { font-size: 17px; }
+          @include breakpoint($bp-small) { font-size: 21px; top: 5px; }
       }
-      h2 { top: 10px; }
+      h2 { 
+        top: 25px;
+
+        @include breakpoint($bp-xlarge) { font-size: 22px; }
+        @include breakpoint($bp-small) { font-size: 24px; }
+      }
       p {
         line-height: 1.15;
         top: 70px;
         font-size: 18px;
         width: 90%;
+
+        @include breakpoint($bp-xlarge) {
+          font-size: 16px;
+          line-height: 1;
+          top: 60px;
+        }
+        @include breakpoint($bp-large) { line-height: 1.15; }
+        @include breakpoint($bp-medium) { top: 40px; }
+        @include breakpoint($bp-small) { top: 60px; font-size: 16px; }
       }
     img { 
       transition-duration: 500ms;
@@ -48,6 +73,10 @@
       a, h1, h2, p {
         display: block;
         opacity: 1;
+      }
+      h2 {
+        @include breakpoint($bp-medium) { display: none; }
+        @include breakpoint($bp-small) { display: block; }
       }
       img {
         filter: blur(4px);
