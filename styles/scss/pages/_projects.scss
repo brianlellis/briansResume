@@ -95,7 +95,31 @@
   height: 1000px;
 }
 #video-portfolio {
-  iframe { width: 420px; height: 250px; }
+  @include breakpoint($bp-mobileLandscape) {
+    margin: 0;
+    padding: 0;
+    div { width: 100%; }
+  }
+  iframe { 
+    width: 420px; 
+    height: 250px;
+    @include breakpoint($bp-large) { 
+      width: 320px; 
+      height: 200px; 
+    }
+    @include breakpoint($bp-medium) { 
+      width: 270px; 
+      height: 152px; 
+    }
+    @include breakpoint($bp-mobileLandscape) { 
+      width: 480px; 
+      height: 280px; 
+    }
+    @include breakpoint($bp-small) { 
+      width: 100%; 
+      height: 250px; 
+    }
+  }
 }
 
 #project-overview,
