@@ -4,7 +4,7 @@
 
 // Card sizing general styles
 .card-grid-1 {
-  padding: 0;
+  margin: 0;
   * { padding: 0; }
 
   li { 
@@ -13,7 +13,7 @@
 }
 
 .card-grid-2 {
-  * { padding: 0; }
+  * { margin: 0; }
 
   li { 
     float: left; 
@@ -22,18 +22,22 @@
 .card-grid-slider {
   overflow: hidden;
   position: relative;
-
   a { float: left; line-height: 0; }
 
   nav {
     position: absolute;
-    right: 1.5%;
+    margin: 0;
+    right: 1%;
     border: 3px solid #000;
     text-align: center;
     padding: 5px 15px;
     transition-duration: 500ms;
     cursor: pointer;
     
+    @include breakpoint($bp-small) {
+      display: none;
+    }
+
     a {
       float: none;
       &:focus, &:hover { text-decoration: none; }
@@ -48,25 +52,42 @@
     position: relative;
     margin: 0;
     padding: 0;
-    height: 300px;
+    height: 270px;
     overflow-y: hidden;
     transition-duration: 300ms;
     li { 
       box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.15);
       float: left; 
       text-align: center;
+      height: 240px;
+      position: relative;
+      line-height: 240px;
+      &:last-child { opacity: 0; }
+      img {
+        max-width: 170px;
+        position: absolute; // center image
+        margin: auto; // center image
+        top: 0; // center image
+        left: 0; // center image
+        right: 0; // center image
+        bottom: 0; // center image
+      }
     }
   }
   &.card-4 {
     li { 
       height: 90%;
-      margin: 1%; 
+      margin: 0.425%; 
       width: 23%;
-      
-      img { 
-        max-height: 50%;
-        margin: 25% auto; 
-        max-width: 100%; 
+
+      @include breakpoint($bp-large) {
+        width: 31%;
+      }
+      @include breakpoint($bp-mobileLandscape) {
+        width: 46%;
+      }
+      @include breakpoint($bp-small) {
+        width: 90%;
       }
     }
   }

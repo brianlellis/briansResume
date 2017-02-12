@@ -4,6 +4,7 @@
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
     sass  = require('gulp-sass'), // SASS compiler
+    sourcemaps = require('gulp-sourcemaps'), // SASS sourcemap builder
     sassdoc = require('sassdoc'), // SASS Documentation builder
     jsdoc = require('gulp-jsdoc3'), // JS Documentation builder
     cucumber = require('gulp-cucumber'), // Automated QA feature testing
@@ -39,19 +40,21 @@ gulp.task('html5-lint', function() {
 });
 
 // SASS manual compile
+// Development
 gulp.task('sass-styles', function () {
-    gulp.src('styles/scss/**/*.scss')
-        .pipe( sass().on('error', sass.logError) )
-        .pipe( gulp.dest('compiled/') );
-
-    return gulp.src('compiled/*.css')
-        .pipe(cleanCSS({debug: true}, function(details) {
+    return gulp.src('styles/scss/**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ includePaths: 'node_modules/breakpoint-sass/stylesheets'}).on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(cleanCSS({ sourcemap: true }, function(details) {
             console.log(details.name + ' original size: ' + details.stats.originalSize);
             console.log(details.name + ' NEW size: ' + details.stats.minifiedSize);
         }))
-        .pipe(gulp.dest('compiled'))
+        .pipe( gulp.dest('compiled/') )
         .pipe(browsync.reload({stream: true})); // prompts a reload after compilation
 });
+
+
 
 // SASSDoc compile
 gulp.task('sassdoc', function () {

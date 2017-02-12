@@ -46,11 +46,16 @@ $base-pad: 30px !default;
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
+/// assume min-width (by default) if only a number :: $high-tide: 500px;
+/// set min-width/max-width if both values are numbers :: $ex-presidents: 600px 800px;
+/// if one value is a string, assume a feature/value pair :: $surfboard-width: max-width 1000px;
+/// string tests together within parentheses, assume each item is a feature value pair :: $surfboard-height: (min-height 1000px) (orientation portrait)
+$bp-small: max-width 480px !default;
+$bp-mobileLandscape: max-width 640px !default;
+$bp-medium: max-width 768px !default;
+$bp-large: max-width 960px !default;
+$bp-xlarge: max-width 1365px !default;
+$bp-dekstop: 1366px !default;
 
 
 /// Relative or absolute URL where all assets are served from

@@ -5,10 +5,10 @@
   height: 100%;
   left: 0;
   position: fixed;
-  top: -120%;
+  top: -1300px;
   width: 100%;
   transition-duration: 600ms;
-
+  &.active { top: 0; }
   .closeButton { 
     position: absolute; 
     top: 25px; 

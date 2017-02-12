@@ -34,7 +34,7 @@ var siteCore = (function ($) {
       _self.observers(); // General site observers
 
       /** 
-       * PAGE SPECCIFIC FUNCTIONS
+       * PAGE SPECIFIC FUNCTIONS
       **/
       // about
       if (pageURL.indexOf("about") > 0) {
@@ -62,6 +62,10 @@ var siteCore = (function ($) {
         _self.resourceShowcase(); // bottom section resources
         _self.resourceImgSpin(); // smooth spin animation
         _self.freezeScroll(); // freezes scroll without using CSS
+
+        $(window).resize(function(event) {
+          _self.awardsAndCertsSizing();
+        });
       }
     },
     observers: function () {
@@ -71,7 +75,7 @@ var siteCore = (function ($) {
     modalOpenClose: function () {
       // Navigation menu click
       mainNav.click(function(event) {
-        modal.css('top', 0).addClass('active');
+        modal.addClass('active');
 
         if ($(this).hasClass('resume')) { 
           $('#modal-overlay .resume').addClass('active');
@@ -85,8 +89,7 @@ var siteCore = (function ($) {
       // Modal overlay click to close
       $('#modal-overlay').click(function(event) {
         if ($(this).hasClass('active')) {
-          $(this).css('top', '-100%');
-          $('#modal-overlay .active').removeClass('active');
+          modal.removeClass('active');
           contactSect.hide();
           resumeSect.hide();
         }
@@ -116,12 +119,7 @@ var siteCore = (function ($) {
       * index page functions
     **/
     awardsAndCerts: function () {
-      slideWidth = $('#sliderHold li').width(); // get initial value of li before slide design
-      
-      $('#sliderHold').width(6 * slideWidth); // made ul wide enough to go past overflow parent container
-      $('#sliderHold li').width(slideWidth); // overwrite css % val to prev recorded val
-      $('#awards-and-certs').width(4.25 * slideWidth); // set width of slider parent width to overflow hide the ul
-
+      _self.awardsAndCertsSizing();
       _self.autoSlide();
 
       $('.control_next').click(function (e) {
@@ -131,6 +129,13 @@ var siteCore = (function ($) {
         // FIXME: This is a sloppy method for auto starting the auto slider again and needs more logic        
         autoSlideStopped = true;
       });
+    },
+    awardsAndCertsSizing: function () {
+      $('#sliderHold, #sliderHold li').css('width',''); // clear inline vals to allow css to give correct val
+      slideWidth = $('#sliderHold li').width(); // get initial value of li before slide design, val fed from scss partial _card-grid.scss
+      
+      $('#sliderHold').width($('#sliderHold li').length * slideWidth); // made ul wide enough to go past overflow parent container
+      $('#sliderHold li').width(slideWidth); // overwrite css % val to prev recorded val
     },
     autoSlide: function () {
       // Sets auto slide interval
