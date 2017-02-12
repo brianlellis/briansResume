@@ -681,7 +681,7 @@ section#site-resources {
     height: 3000px; }
   section#site-resources canvas {
     position: fixed;
-    bottom: -120%;
+    bottom: -105%;
     left: 0;
     right: 0;
     margin: auto;
