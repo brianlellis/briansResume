@@ -7,6 +7,7 @@
   height: 560px;
   overflow: hidden;
   position: relative;
+  @include breakpoint($bp-large) { height: 450px; }
 
   img {
     width: 100%;
@@ -21,6 +22,7 @@
     left: 100px;
     line-height: 50px;
     font-size: 64px;
+    @include breakpoint($bp-large) { top: 60px; left: 30px; }
 
     span {
       margin-left: 100px;
@@ -29,5 +31,6 @@
   h2 {
     bottom: 130px;
     left: 210px;
+    @include breakpoint($bp-large) { left: 60px; }
   }
 }

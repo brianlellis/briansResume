@@ -50,12 +50,13 @@ $base-pad: 30px !default;
 /// set min-width/max-width if both values are numbers :: $ex-presidents: 600px 800px;
 /// if one value is a string, assume a feature/value pair :: $surfboard-width: max-width 1000px;
 /// string tests together within parentheses, assume each item is a feature value pair :: $surfboard-height: (min-height 1000px) (orientation portrait)
+$bp-xsmall: max-width 400px !default;
 $bp-small: max-width 480px !default;
 $bp-mobileLandscape: max-width 640px !default;
 $bp-medium: max-width 768px !default;
 $bp-large: max-width 960px !default;
 $bp-xlarge: max-width 1365px !default;
-$bp-dekstop: 1366px !default;
+$bp-desktop: 1366px !default;
 
 
 /// Relative or absolute URL where all assets are served from

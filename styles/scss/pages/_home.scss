@@ -19,7 +19,7 @@
     position: absolute;
     width: 100%;
     background-color: rgba(255,255,255,0.8);
-    padding: 14% 0 20% 0;
+    padding: 14% 0 17% 0;
     text-align: center;
     font-size: 32px;
     text-decoration: underline;
@@ -36,11 +36,20 @@
 #site-resources {
   .placard {
     cursor: pointer;
-    img { transition-duration: 2000ms; }
+    img { 
+      transition-duration: 2000ms;
+      @include breakpoint($bp-large) { transition-duration: 800ms; } 
+    }
     a { 
       transition-duration: 500ms; 
       opacity: 1;
       pointer-events: none; // stop clicks to retain outbount link but not allow user to use
+      font-size: 16px;
+      line-height: initial;
+
+      @include breakpoint($bp-large) { bottom: 0; }
+      @include breakpoint($bp-xsmall) { display: none; }
+      @include breakpoint($bp-desktop) { font-size: 20px; } 
     }
     &.spinning { animation: spin 1s ease-in; }
   }
@@ -51,6 +60,10 @@
     opacity: 0;
     display: none;
     transition: opacity 2000ms;
+
+    @include breakpoint($bp-large) {
+      font-size: 22px;
+    }
   }
   p.showcaseMessage {
     top: initial;
@@ -58,6 +71,212 @@
     left: 20px;
   }
 }
+
+#site-resources {
+    transition-duration: 2000ms;
+    height: 0;
+    &.active { height: 3000px; }
+
+    canvas {
+      position: fixed;
+      bottom: -1500px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transition-duration: 1300ms;
+      opacity: .5; 
+    }
+    &.active {
+      canvas { 
+        bottom: -30%;
+        @include breakpoint($bp-large) { width: 1300px; } 
+      }
+    }
+
+    h1 { font-size: 30px; }
+    .showcaseMessage.animate { 
+      opacity: 1; 
+      display: block;
+
+      @include breakpoint($bp-mobileLandscape) {
+        font-size: 18px;
+        width: 50%;
+        right: 5%;
+        left: initial;
+      } 
+    }
+
+    .placard { 
+      @include breakpoint($bp-medium) { height: 150px; width: 13.75%; }
+      @include breakpoint($bp-small) { width: 19%; }
+      &.cucumber {
+        @include breakpoint($bp-medium) { display: none; }
+      }
+      &.less, &.travis {
+        @include breakpoint($bp-small) { display: none; }
+      }
+    }
+    .placard.animate {
+      a { opacity: 0; }
+
+      &.digOcean img { 
+        top: 650px; 
+        left: -100px;
+        width: 200px;
+
+        @include breakpoint($bp-large) {
+          top: 190px;
+          left: -230px;
+          width: 120px;
+        }
+        @include breakpoint($bp-medium) {
+          top: 590px;
+          left: -1090px;
+          width: 120px;
+        }
+        @include breakpoint($bp-mobileLandscape) {
+          top: 490px;
+          left: -680px;
+          width: 100px;
+        }
+        @include breakpoint($bp-small) {
+          left: -450px;
+          top: 460px;
+        }
+      }
+      &.github img { 
+        top: 320px; 
+        left: -150px;
+        width: 170px;
+
+        @include breakpoint($bp-large) {
+          top: 180px;
+          left: -310px;
+          width: 130px;
+        }
+        @include breakpoint($bp-mobileLandscape) {
+          top: 220px;
+          left: -390px;
+          width: 100px;
+        } 
+        @include breakpoint($bp-small) {
+          top: 190px;
+          left: -290px;
+        }
+      }
+      &.cucumber img { 
+        top: 520px; 
+        left: -250px;
+
+        @include breakpoint($bp-large) {
+          top: 120px;
+          left: -250px;
+          width: 90px;
+        }
+        @include breakpoint($bp-medium) { display: none; }
+      }
+      &.travis  img { 
+        top: 420px; 
+        left: -150px; 
+        width: 130px;
+
+        @include breakpoint($bp-large) {
+          top: 270px;
+          left: -360px;
+          width: 90px;
+        }
+        @include breakpoint($bp-medium) {
+          top: 440px;
+          left: -710px;
+          width: 80px;
+        }
+        @include breakpoint($bp-mobileLandscape) {
+          top: 420px;
+          left: -690px;
+          width: 60px;
+        } 
+        @include breakpoint($bp-small) {
+          left: -620px;
+        } 
+      }
+      &.html5  img { 
+        top: 120px;
+        width: 120px;
+
+        @include breakpoint($bp-large) {
+          top: 10px;
+          width: 100px;
+        }
+        @include breakpoint($bp-medium) { width: 70px; }
+        @include breakpoint($bp-small) {
+          left: 20px;
+        } 
+      }
+      &.sass  img {     
+        top: 420px;
+        left: -180px;
+        width: 150px; 
+
+        @include breakpoint($bp-large) {
+          top: 190px;
+          left: -70px;
+          width: 100px;
+        }
+        @include breakpoint($bp-medium) { 
+          width: 70px; 
+          top: 150px; 
+        }
+        @include breakpoint($bp-mobileLandscape) {
+          top: 60px;
+          left: 20px;
+        } 
+      }
+      &.less  img {     
+        top: 600px;
+        left: -200px; 
+        width: 120px;
+
+        @include breakpoint($bp-large) {
+          top: 480px;
+          left: -340px;
+          width: 110px;
+        }
+        @include breakpoint($bp-medium) { 
+          top: 400px;
+          width: 80px; 
+        }
+        @include breakpoint($bp-mobileLandscape) {
+          top: 180px;
+          width: 80px;
+          left: -290px;
+        } 
+        @include breakpoint($bp-small) {
+          left: -230px;
+        }
+      }
+      &.jquery  img { 
+        top: 340px;     
+        left: -400px;
+        width: 200px;
+
+        @include breakpoint($bp-medium) {
+          top: 280px;
+          left: -440px;
+          width: 160px;
+        }
+        @include breakpoint($bp-mobileLandscape) {
+          top: 300px;
+          width: 120px;
+          left: -390px;
+        }
+        @include breakpoint($bp-small) {
+          left: -170px;
+          top: 300px;
+        } 
+      }
+    }
+  }
+
 @-webkit-keyframes spin {
   0%  {-webkit-transform: rotateY(0deg);}
   50% {-webkit-transform: rotateY(180deg);}

@@ -5,7 +5,8 @@
 // Card sizing general styles
 .card-grid-1 {
   margin: 0;
-  * { padding: 0; }
+  padding: 0;
+  * { margin: 0; padding: 0; }
 
   li { 
     float: left; 
@@ -13,7 +14,7 @@
 }
 
 .card-grid-2 {
-  * { margin: 0; }
+  * { margin: 0; padding: 0; }
 
   li { 
     float: left; 
@@ -81,13 +82,13 @@
       width: 23%;
 
       @include breakpoint($bp-large) {
-        width: 31%;
+        width: 30.75%;
       }
       @include breakpoint($bp-mobileLandscape) {
         width: 46%;
       }
       @include breakpoint($bp-small) {
-        width: 90%;
+        width: 91%;
       }
     }
   }
