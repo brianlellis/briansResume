@@ -108,6 +108,22 @@
         left: initial;
       } 
     }
+    h2.showcaseMessage.animate {
+      @include breakpoint($bp-hd) {
+        top: 20px;
+        right: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        margin: auto;
+      }
+    }
+    p.showcaseMessage.animate {
+      @include breakpoint($bp-hd) {
+        font-size: 40px;
+      }
+    }
 
     .placard { 
       @include breakpoint($bp-medium) { height: 150px; width: 13.75%; }
@@ -146,6 +162,7 @@
           left: -450px;
           top: 460px;
         }
+        @include breakpoint($bp-hd) { top: 700px; }
       }
       &.github img { 
         top: 320px; 
@@ -166,6 +183,7 @@
           top: 190px;
           left: -290px;
         }
+        @include breakpoint($bp-hd) { top: 600px; }
       }
       &.cucumber img { 
         top: 520px; 
@@ -177,6 +195,7 @@
           width: 90px;
         }
         @include breakpoint($bp-medium) { display: none; }
+        @include breakpoint($bp-hd) { top: 400px; }
       }
       &.travis  img { 
         top: 420px; 
@@ -214,6 +233,7 @@
         @include breakpoint($bp-small) {
           left: 20px;
         } 
+        @include breakpoint($bp-hd) { top: 500px; }
       }
       &.sass  img {     
         top: 420px;
@@ -233,6 +253,7 @@
           top: 60px;
           left: 20px;
         } 
+        @include breakpoint($bp-hd) { top: 750px; }
       }
       &.less  img {     
         top: 600px;
