@@ -1,0 +1,5 @@
+#phaser-example {
+	@include breakpoint($bp-mobileLandscape) {
+		display: none;
+	}
+}
