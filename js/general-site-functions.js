@@ -3,9 +3,10 @@ var siteCore = (function ($) {
       pageURL = window.location.href, // Get current page's url
       mainNav = $('body > nav .modal'), // Website top nav
       modal = $('#modal-overlay'), // Black modal overlay 
-      modalBox = $('#modal-overlay .modal-box'), // Modal box on top of container
-      contactSect = $('#contact-me'), // modal box contact section
-      resumeSect = $('#my-resume'),  // modal box resume section
+      modalBox = modal.find('.modal-box'), // Modal box on top of container
+      contactForm = modal.find('form'),
+      contactText = modal.find('textarea'),
+      contactStatus = modal.find('.status'),
 
       // Index page selectors
       clientPictures,
@@ -69,7 +70,7 @@ var siteCore = (function ($) {
     },
     observers: function () {
       _self.modalOpenClose();
-      _self.modalNavWatch();
+      _self.modalContact();
     },
     modalOpenClose: function () {
       // Navigation menu click
@@ -78,10 +79,50 @@ var siteCore = (function ($) {
       });
 
       // Modal overlay click to close
-      $('#modal-overlay').click(function(event) {
+      modal.click(function(event) {
         if ($(this).hasClass('active')) {
           modal.removeClass('active');
         }
+      });
+      modalBox.click(function(event) {
+        event.stopPropagation();
+      });
+    },
+    modalContact: function () {
+      contactForm.submit(function(event) {
+        event.preventDefault();
+
+        // Serialize the form data.
+        var msg = contactForm.serialize();
+
+        // Submit the form using AJAX.
+        $.ajax({
+          type: 'POST',
+          url: contactForm.attr('action'),
+          data: msg
+        }).done(function(response) {
+            // Make sure that the formMessages div has the 'success' class.
+            contactStatus.removeClass('error');
+            contactStatus.addClass('success');
+
+            // Set the message text.
+            contactStatus.text(response);
+
+            // Clear the form.
+            contactText.val('');
+        }).fail(function(data) {
+            // Make sure that the formMessages div has the 'error' class.
+            contactStatus.removeClass('success');
+            contactStatus.addClass('error');
+
+            // Set the message text.
+            if (data.responseText !== '') {
+                contactStatus.text(data.responseText);
+            } else {
+                contactStatus.text('Oops! An error occured and your message could not be sent.');
+            }
+        });
+
       });
     },
     /**
