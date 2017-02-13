@@ -4,10 +4,13 @@
   background: rgba(0,0,0,.5);
   height: 100%;
   left: 0;
+  right: 0;
   position: fixed;
   top: -1300px;
+  bottom: 1300px;
   width: 100%;
   transition-duration: 600ms;
+
   &.active { top: 0; }
   .closeButton { 
     position: absolute; 

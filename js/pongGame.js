@@ -6,12 +6,11 @@ var paddle1,
     p1c = 0, 
     p2c = 0, 
     gameBall, 
-    worldHit = window.innerWidth * window.devicePixelRatio - 18, 
     worldHeight = 500,
     gameStop = true, gameTxt,hitCount = 50;
 
 var game = new  Phaser.Game( 
-                  worldHit,
+                  window.innerWidth >= 1600 ? 1440 : window.innerWidth * window.devicePixelRatio - 18,
                   worldHeight, 
                   Phaser.AUTO,
                   'phaser-example', 
@@ -36,7 +35,7 @@ function create () {
   gameBall = createBall(game.world.centerX, game.world.centerY);
   
   scoreP1 = game.add.text(15, 0, 'player 1: 0', { font: "20px Arial", fill: "#ffffff", align: "left" });
-  scoreP2 = game.add.text(worldHit - 110, 0, 'player 2: 0', { font: "20px Arial", fill: "#ffffff", align: "left" });
+  scoreP2 = game.add.text(game.world.width - 110, 0, 'player 2: 0', { font: "20px Arial", fill: "#ffffff", align: "left" });
   gameTxt = game.add.sprite(game.world.centerX, game.world.centerY, 'gameBegin').anchor.set(0.5);
 }
 function update () {
@@ -63,7 +62,7 @@ function update () {
     p2c+=1;
     scoreP2.text = 'player 2: '+p2c;
     resetBall();
-  } else if (gameBall.x > worldHit - 30) {
+  } else if (gameBall.x > game.world.width - 30) {
     p1c+=1;
     scoreP1.text = 'player 1: '+p1c;
     resetBall();

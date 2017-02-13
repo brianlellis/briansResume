@@ -2,4 +2,7 @@
 	@include breakpoint($bp-mobileLandscape) {
 		display: none;
 	}
+	canvas {
+		@include breakpoint($bp-hd) { margin: auto; }
+	}
 }
