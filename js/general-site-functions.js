@@ -48,7 +48,6 @@ var siteCore = (function ($) {
       } 
       // past projects
       else if (pageURL.indexOf("past-projects") > 0) {
-        _self.clientGrid();
       } 
       // default for index page
       else {
