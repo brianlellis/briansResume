@@ -75,42 +75,12 @@ var siteCore = (function ($) {
       // Navigation menu click
       mainNav.click(function(event) {
         modal.addClass('active');
-
-        if ($(this).hasClass('resume')) { 
-          $('#modal-overlay .resume').addClass('active');
-          resumeSect.show();
-        } else {
-          $('#modal-overlay .contact').addClass('active');
-          contactSect.show();
-        }
       });
 
       // Modal overlay click to close
       $('#modal-overlay').click(function(event) {
         if ($(this).hasClass('active')) {
           modal.removeClass('active');
-          contactSect.hide();
-          resumeSect.hide();
-        }
-      });
-    },
-    modalNavWatch: function () {
-      var modalNav = $('#modal-overlay nav li');
-      modalBox.click(function(event) {
-        event.stopPropagation();
-      });
-      modalNav.click(function(event) {
-        if (! $(this).hasClass('active')) {
-          $('#modal-overlay .active').removeClass('active');
-          $(this).addClass('active');
-
-          if ($('#modal-overlay .active').hasClass('resume')) {
-            contactSect.hide();
-            resumeSect.show();
-          } else {
-            contactSect.show();
-            resumeSect.hide();
-          }
         }
       });
     },

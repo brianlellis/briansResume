@@ -39,7 +39,6 @@
       <li class="learning"><a href="learning.html" title="Navigate to learning">Learning</a></li>
       <li><a href="about.html" title="Navigate to about">About</a></li>
       <li><a href="#" class="modal resume" title="Navigate to home">Resume</a></li>
-      <li class="contact"><a href="#" class="modal contact" title="Navigate to contact">Contact</a></li>
     </ul>
   </nav>
   <main>
@@ -140,25 +139,28 @@
   <footer>
     Copyright 2016. Brian L. Ellis
   </footer>
-  <div id="modal-overlay" class="learning">
+  <div id="modal-overlay">
     <div class="closeButton"><span>X &nbsp;</span>close</div>
     <div class="modal-box">
-      <nav>
-        <ul>
-          <li class="resume"><a href="#" title="">Resume</a></li>
-          <li class="contact"><a href="#" title="">Contact</a></li>
-        </ul>
-      </nav>
       <section id="contact-me">
+        <div id="resume-formats">
+          <h1>Download my resume in Word/PDF or view it in Google Docs</h1>
+          <a href="media/resume/My2017Resume.docx" title="microsoft word resume download" class="word-format">
+            <img src="media/resume/word.png" alt="microsoft word file format">
+          </a>
+          <a href="media/resume/My2017Resume.pdf" title="pdf resume download" class="pdf-format">
+            <img src="media/resume/pdf.png" alt="pdf file format">
+          </a>
+          <a target="_blank" href="https://docs.google.com/document/d/1JieWRM7-KMKAyf3pP9cR4asBnvehJllR3wB84aueQmQ/edit?usp=sharing" title="google doc resume download" class="google-format">
+            <img src="media/resume/googledoc.png" alt="google doc file format">
+          </a>
+        </div>
         <h1>Brian Ellis</h1>
         <p>PHONE: (803) 556-0261</p>
         <p>EMAIL: Brian@BriansResume.com</p>
         <p>MAILING: 504 Canal Dr. Pelion, SC 29123</p>
         <textarea type="text" name="contact-msg"></textarea>
         <button type="button">Send message</button>
-      </section>
-      <section id="my-resume">
-        
       </section>
     </div>
   </div>
