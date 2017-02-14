@@ -35,6 +35,19 @@
     p { font-size: 18px; }
 
     #contact-me {
+      #form-messages { 
+        &.success {
+          text-align: center;
+          margin-top: 110px;
+          font-size: 28px;
+        }
+        &.error {
+          position: absolute;
+          bottom: 224px;
+          right: 5%;
+          color: #d22121;
+        }
+      }
       #ajax-contact { margin-top: 40px; }
       h1 { margin: 10px auto; }
       p { margin: 5px 0; font-size: 16px; }

@@ -112,6 +112,7 @@ var siteCore = (function ($) {
               // Make sure that the formMessages div has the 'success' class.
               $(formMessages).removeClass('error');
               $(formMessages).addClass('success');
+              $(form).hide();
 
               // Set the message text.
               $(formMessages).text(response);
