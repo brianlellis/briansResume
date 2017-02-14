@@ -46,3 +46,22 @@ section[class^="col-"] {
     &:last-child { width: 33%;  float: right; img { float: right; margin-top: 50%; } }
   }
 }
+
+// Even width col divisions
+body.proven {
+  .col-2-third {
+    &-left,
+    &-right {
+      div {
+        a { color: #000; font-size: 28px; }
+        img { max-width: 250px; }
+      }
+    }
+    &-left div { 
+      &:first-child { img { margin-top: 10%; } } 
+    }
+    &-right div { 
+      &:last-child { img { margin-top: 20%; } }
+    }
+  }
+}
