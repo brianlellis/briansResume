@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="GDzYB-uXJ6fu4xQ2JoeaP3TM0LCD1AcE6ZtVjwUe-Xc">
+
+  <!-- Site info meta tags -->
+  <meta name="description" content="Brian Ellis' resume site brilliantly showcases his HTML, CSS, Javascript and all around web development skills">
+  <!-- Gplus -->
+  <link rel=”author” href="https://plus.google.com/[YOUR PERSONAL G+ PROFILE HERE]" />
+  <!-- Facebook -->
+  <meta property="og:title" content="Brian Ellis' website resume showcase" />
+  <meta property="og:description" content="Brian Ellis' resume site brilliantly showcases his HTML, CSS, Javascript and all around web development skills"/>
+  <!-- Twitter -->
+  <meta name="twitter:title" content="Brian Ellis' Awesome Web Developer">
+  <meta name="twitter:description" content="Brian Ellis' resume site brilliantly showcases his HTML, CSS, Javascript and all around web development skills" />
+
+  <title>Brian Ellis' - Homepage</title>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
+  <link rel="stylesheet" href="compiled/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body class="homepage">
+  <aside class="contact-info">(803) 556-0261</aside>
+  <aside class="contact-info2">Brian@BriansResume.com</aside>
+  <div id="logotype">
+    <a href="index.html" title="">
+      <div class=leftLetter><span>b</span></div>
+      <div class="rightLetter"><span>e</span></div>
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="past-projects.html" title="Navigate to projects">Projects</a></li>
+      <li class="learning"><a href="learning.html" title="Navigate to learning">Learning</a></li>
+      <li><a href="about.html" title="Navigate to about">About</a></li>
+      <li><a href="#" class="modal resume" title="Navigate to home">Resume</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section aria-label="main banner image of website" id="heroSlider">
+      <img src="media/proven/sublime.jpg" alt="placeholder picture of superhero business man" />
+    </section>
+    <section aria-label="Brief description section">
+      <h1>Take the guess work out of my development</h1>
+      <p>
+        I'm a firm believer of results not discussion. With that in mind I regularly invest my time in StackOverflow, Github, Coderbyte and Codewars. The reason is simple, when people ask, "what if", I can show the results not attempt to explain them. Please take your time to review all of my community involvement below.
+      </p>
+    </section>
+    <section aria-label="Recent learning project" class="col-2-third-left">
+      <div>
+        <img src="media/learning/complyJS.jpg" alt="comply js logo">
+      </div>
+      <div>
+        <h1>complyJS - An automated ADA system</h1>
+        <ul class="lang-badges">
+          <li class="js">JS</li>
+          <li class="xml">XML</li>
+        </ul> 
+        <p>
+          ComplyJS is currently being used in a minimum of 3 multi-million dollar revenue earning companies across 3 continents. The issue was simple; fix a project behind schedule, over budget, under bidded and make sure the client is not legally liable for failure to abide by AA ADA compliance.
+        </p>
+        <p>
+          With this task handed to me I dug diligently into an add on solution to fix the problems. What occurred was the creation of a JS library than when loaded would handle aria-label tags, alt tags, font-sizing issues, color contrast issues and allow for dynamic menu tabbing without the need for any additional CSS, HTML or PHP.
+        </p>
+        <p>
+          Current companies who are using this system are: Dean &amp; Deluca, LeCreuset America, LeCreuset Global.
+        </p>
+      </div>
+    </section>
+    <section aria-label="Recent learning project" class="col-2-third-right">
+      <div>
+        <h1>Trawler - A QA Continuous Integration system</h1>
+        <ul class="lang-badges">
+          <li class="js">JS</li>
+          <li class="bash">BASH</li>
+          <li class="php">PHP</li>
+        </ul>
+        <p>
+          Trawler was actually a surprise, pleasure and complete challenge to work on. After 6 months working at BlueAcorn and after the release of my BAM2 system the company's senior DevOps engineer, Brice Burgess, chose me to lead the QA department and company in an automated QA system development project. 
+        </p>
+        <p>
+          The idea to the system seemed simple but the complexity of all parts involved was definitely underestimated by myself when I initially took on the project. In the end the result was JS based Cucumber system supported with Docker containers and integrated into an already present Jenkins deployment pipeline. Equally as important to continuous integration was the addition of a living documentation system that allowed end-users, developers and employees to allow be kept abreast of the latest information of a site instance.
+        </p>
+        <p>While the development side was impressive, just as much was the BDD process being implemented through the project management side of the company. This allowed me the opportunity to not only develop but to work directly with business analysts, account managers and functional department managers to transform BRDs(Business Requirement Documents), UAT(User Acceptance Testing) and User documentation documents into a coherent, aligned vision, system.</p>
+      </div>
+      <div>
+        <img src="media/learning/trawler.png" alt="trawler qa system logo">
+      </div>
+    </section>
+    <section aria-label="Recent learning project" class="col-2-third-left">
+      <div>
+        <img src="http://fpoimg.com/300x250" alt="learning project image">
+      </div>
+      <div>
+        <h1>Twin Stick Hell - Proof of concept Swift3 app/game</h1>
+        <ul class="lang-badges">
+          <li class="swift">Swift3</li>
+        </ul>
+        <p>
+          Twin Stick Hell actually started as a Swift3 Dungeons &amp; Dragons companion app to promote social interaction and allow for games to be held outside of one room. While playing with the physics system built into Spritekit an idea for a game similar to smashTV from the SNES days came to mind. Needless to say it didn't take long to convince 3 other fellow game nerds to switch direction and begin a fresh start with an idea we're still developing to this day.
+        </p>
+        <p>
+          Currently development schedule for the game is a bit hectic but the end goal after an initial 8 level single player campaign is the inclusion a 2 player PVP system. Art assets for the development portion or licensed under GPLU and the end product is also expect to be a learning device for other Swift developers interested in 2D Spritekit development and will be licensed under a non-commercial public license.
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    Copyright 2016. Brian L. Ellis
+  </footer>
+  <div id="modal-overlay">
+    <div class="closeButton"><span>X &nbsp;</span>close</div>
+    <div class="modal-box">
+      <section id="contact-me">
+        <div id="resume-formats">
+          <h1>Download my resume in Word, PDF or view it in Google Docs</h1>
+          <a href="media/resume/BrianEllisResume.docx" title="microsoft word resume download" class="word-format">
+            <img src="media/resume/word.png" alt="microsoft word file format">
+          </a>
+          <a target="_blank" href="media/resume/BrianEllisResume.pdf" title="pdf resume download" class="pdf-format">
+            <img src="media/resume/pdf.png" alt="pdf file format">
+          </a>
+          <a target="_blank" href="https://docs.google.com/document/d/1JieWRM7-KMKAyf3pP9cR4asBnvehJllR3wB84aueQmQ/edit?usp=sharing" title="google doc resume download" class="google-format">
+            <img src="media/resume/googledoc.png" alt="google doc file format">
+          </a>
+        </div>
+        <h1>Brian Ellis</h1>
+        <p>PHONE: (803) 556-0261</p>
+        <p>EMAIL: Brian@BriansResume.com</p>
+        <p>MAILING: 504 Canal Dr. Pelion, SC 29123</p>
+        <div id="form-messages"></div>
+        <form id="ajax-contact" method="post" action="mailer.php">
+          <div class="field">
+              <input type="email" placeholder="Please enter an email" id="email" name="email" required>
+          </div>
+
+          <div class="field">
+              <textarea id="message" placeholder="Please enter your message" name="message" required></textarea>
+          </div>
+
+          <div class="field">
+              <button type="submit">Send</button>
+          </div>
+        </form>    
+      </div>
+    </section>
+  </div>
+
+  <!--NON-LIBRARY JS ASSETS -->
+  <script src="js/general-site-functions.js" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="js/canvasAnim.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>

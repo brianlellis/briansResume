@@ -1,0 +1,24 @@
+aside#proven {
+  background: #1b1b1b;
+  text-align: center;
+  height: 50px;
+
+  img {
+    height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  a {
+    color: #fff;
+    margin-left: 3%;
+    font-size: 27px;
+    vertical-align: middle;
+    cursor: pointer;
+    &:hover { text-decoration: none; }
+    span {
+      margin-left: 2%;
+      font-size: 21px;
+      text-decoration: underline;
+    }
+  }
+}
