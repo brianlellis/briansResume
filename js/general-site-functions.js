@@ -89,40 +89,48 @@ var siteCore = (function ($) {
       });
     },
     modalContact: function () {
-      contactForm.submit(function(event) {
-        event.preventDefault();
+      // Get the form.
+      var form = $('#ajax-contact');
 
-        // Serialize the form data.
-        var msg = contactForm.serialize();
+      // Get the messages div.
+      var formMessages = $('#form-messages');
 
-        // Submit the form using AJAX.
-        $.ajax({
-          type: 'POST',
-          url: contactForm.attr('action'),
-          data: msg
-        }).done(function(response) {
-            // Make sure that the formMessages div has the 'success' class.
-            contactStatus.removeClass('error');
-            contactStatus.addClass('success');
+      // Set up an event listener for the contact form.
+      $(form).submit(function(event) {
+          // Stop the browser from submitting the form.
+          event.preventDefault();
 
-            // Set the message text.
-            contactStatus.text(response);
+          // Serialize the form data.
+          var formData = $(form).serialize();
 
-            // Clear the form.
-            contactText.val('');
-        }).fail(function(data) {
-            // Make sure that the formMessages div has the 'error' class.
-            contactStatus.removeClass('success');
-            contactStatus.addClass('error');
+          // Submit the form using AJAX.
+          $.ajax({
+              type: 'POST',
+              url: $(form).attr('action'),
+              data: formData
+          }).done(function(response) {
+              // Make sure that the formMessages div has the 'success' class.
+              $(formMessages).removeClass('error');
+              $(formMessages).addClass('success');
 
-            // Set the message text.
-            if (data.responseText !== '') {
-                contactStatus.text(data.responseText);
-            } else {
-                contactStatus.text('Oops! An error occured and your message could not be sent.');
-            }
-        });
+              // Set the message text.
+              $(formMessages).text(response);
 
+              // Clear the form.
+              $('#email').val('');
+              $('#message').val('');
+          }).fail(function(data) {
+              // Make sure that the formMessages div has the 'error' class.
+              $(formMessages).removeClass('success');
+              $(formMessages).addClass('error');
+
+              // Set the message text.
+              if (data.responseText !== '') {
+                  $(formMessages).text(data.responseText);
+              } else {
+                  $(formMessages).text('Oops! An error occured and your message could not be sent.');
+              }
+          });
       });
     },
     /**

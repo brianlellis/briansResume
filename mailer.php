@@ -7,7 +7,7 @@
         $message = trim($_POST["message"]);
 
         // Check that data was sent to the mailer.
-        if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if ( empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Oops! There was a problem with your submission. Please complete the form and try again.";
@@ -15,16 +15,18 @@
         }
 
         // Set the recipient email address.
+        // FIXME: Update this to your desired email address.
         $recipient = "brian@briansresume.com";
 
         // Set the email subject.
-        $subject = "HIRING CONTACT: from $name";
+        $subject = "RESUME SITE CONTACT";
 
         // Build the email content.
+        $email_content .= "Email: $email\n\n";
         $email_content .= "Message:\n$message\n";
 
         // Build the email headers.
-        $email_headers = "From: $name <$email>";
+        $email_headers = "From: RESUME SITE <$email>";
 
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {

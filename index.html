@@ -209,11 +209,20 @@
         <p>PHONE: (803) 556-0261</p>
         <p>EMAIL: Brian@BriansResume.com</p>
         <p>MAILING: 504 Canal Dr. Pelion, SC 29123</p>
-        <form action="mailer.php" method="get" accept-charset="utf-8">
-          <input type="email" id="email" placeholder="Please enter an email" name="email" required>
-          <textarea type="text" placeholder="Please enter your message" name="contact-msg"></textarea>
-          <button type="">Send message</button>
-        </form>     
+        <div id="form-messages"></div>
+        <form id="ajax-contact" method="post" action="mailer.php">
+          <div class="field">
+              <input type="email" placeholder="Please enter an email" id="email" name="email" required>
+          </div>
+
+          <div class="field">
+              <textarea id="message" placeholder="Please enter your message" name="message" required></textarea>
+          </div>
+
+          <div class="field">
+              <button type="submit">Send</button>
+          </div>
+        </form>    
       </div>
     </section>
   </div>
