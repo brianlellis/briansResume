@@ -76,230 +76,238 @@
 }
 
 #site-resources {
-    transition-duration: 2000ms;
-    height: 0;
-    &.active { height: 3000px; }
+  transition-duration: 2000ms;
+  height: 0;
+  &.active { height: 3000px; }
 
-    canvas {
-      position: fixed;
-      bottom: -1500px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      transition-duration: 1300ms;
-      opacity: .5; 
-    }
-    &.active {
-      canvas { 
-        bottom: -30%;
-        @include breakpoint($bp-large) { width: 1300px; } 
-      }
-    }
-
-    h1 { font-size: 30px; }
-    .showcaseMessage.animate { 
-      opacity: 1; 
-      display: block;
-
-      @include breakpoint($bp-mobileLandscape) {
-        font-size: 18px;
-        width: 50%;
-        right: 5%;
-        left: initial;
-      } 
-    }
-    h2.showcaseMessage.animate {
-      @include breakpoint($bp-hd) {
-        top: 20px;
-        right: 0;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        font-size: 40px;
-        margin: auto;
-      }
-    }
-    p.showcaseMessage.animate {
-      @include breakpoint($bp-hd) {
-        font-size: 40px;
-      }
-    }
-
-    .placard { 
-      @include breakpoint($bp-medium) { height: 150px; width: 13.75%; }
-      @include breakpoint($bp-small) { width: 19%; }
-      &.cucumber {
-        @include breakpoint($bp-medium) { display: none; }
-      }
-      &.less, &.travis {
-        @include breakpoint($bp-small) { display: none; }
-      }
-    }
-    .placard.animate {
-      a { opacity: 0; }
-
-      &.digOcean img { 
-        top: 650px; 
-        left: -100px;
-        width: 200px;
-
-        @include breakpoint($bp-large) {
-          top: 190px;
-          left: -230px;
-          width: 120px;
-        }
-        @include breakpoint($bp-medium) {
-          top: 590px;
-          left: -1090px;
-          width: 120px;
-        }
-        @include breakpoint($bp-mobileLandscape) {
-          top: 490px;
-          left: -680px;
-          width: 100px;
-        }
-        @include breakpoint($bp-small) {
-          left: -450px;
-          top: 460px;
-        }
-        @include breakpoint($bp-hd) { top: 700px; }
-      }
-      &.github img { 
-        top: 320px; 
-        left: -150px;
-        width: 170px;
-
-        @include breakpoint($bp-large) {
-          top: 180px;
-          left: -310px;
-          width: 130px;
-        }
-        @include breakpoint($bp-mobileLandscape) {
-          top: 220px;
-          left: -390px;
-          width: 100px;
-        } 
-        @include breakpoint($bp-small) {
-          top: 190px;
-          left: -290px;
-        }
-        @include breakpoint($bp-hd) { top: 600px; }
-      }
-      &.cucumber img { 
-        top: 520px; 
-        left: -250px;
-
-        @include breakpoint($bp-large) {
-          top: 120px;
-          left: -250px;
-          width: 90px;
-        }
-        @include breakpoint($bp-medium) { display: none; }
-        @include breakpoint($bp-hd) { top: 400px; }
-      }
-      &.travis  img { 
-        top: 420px; 
-        left: -150px; 
-        width: 130px;
-
-        @include breakpoint($bp-large) {
-          top: 270px;
-          left: -360px;
-          width: 90px;
-        }
-        @include breakpoint($bp-medium) {
-          top: 440px;
-          left: -710px;
-          width: 80px;
-        }
-        @include breakpoint($bp-mobileLandscape) {
-          top: 420px;
-          left: -690px;
-          width: 60px;
-        } 
-        @include breakpoint($bp-small) {
-          left: -620px;
-        } 
-      }
-      &.html5  img { 
-        top: 120px;
-        width: 120px;
-
-        @include breakpoint($bp-large) {
-          top: 10px;
-          width: 100px;
-        }
-        @include breakpoint($bp-medium) { width: 70px; }
-        @include breakpoint($bp-small) {
-          left: 20px;
-        } 
-        @include breakpoint($bp-hd) { top: 500px; }
-      }
-      &.sass  img {     
-        top: 420px;
-        left: -180px;
-        width: 150px; 
-
-        @include breakpoint($bp-large) {
-          top: 190px;
-          left: -70px;
-          width: 100px;
-        }
-        @include breakpoint($bp-medium) { 
-          width: 70px; 
-          top: 150px; 
-        }
-        @include breakpoint($bp-mobileLandscape) {
-          top: 60px;
-          left: 20px;
-        } 
-        @include breakpoint($bp-hd) { top: 750px; }
-      }
-      &.less  img {     
-        top: 600px;
-        left: -200px; 
-        width: 120px;
-
-        @include breakpoint($bp-large) {
-          top: 480px;
-          left: -340px;
-          width: 110px;
-        }
-        @include breakpoint($bp-medium) { 
-          top: 400px;
-          width: 80px; 
-        }
-        @include breakpoint($bp-mobileLandscape) {
-          top: 180px;
-          width: 80px;
-          left: -290px;
-        } 
-        @include breakpoint($bp-small) {
-          left: -230px;
-        }
-      }
-      &.jquery  img { 
-        top: 340px;     
-        left: -400px;
-        width: 200px;
-
-        @include breakpoint($bp-medium) {
-          top: 280px;
-          left: -440px;
-          width: 160px;
-        }
-        @include breakpoint($bp-mobileLandscape) {
-          top: 300px;
-          width: 120px;
-          left: -390px;
-        }
-        @include breakpoint($bp-small) {
-          left: -170px;
-          top: 300px;
-        } 
-      }
+  canvas {
+    position: fixed;
+    bottom: -1500px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition-duration: 1300ms;
+    opacity: .5; 
+  }
+  &.active {
+    canvas { 
+      bottom: -30%;
+      @include breakpoint($bp-large) { width: 1300px; } 
     }
   }
+
+  h1 { font-size: 30px; }
+  .showcaseMessage.animate { 
+    opacity: 1; 
+    display: block;
+
+    @include breakpoint($bp-mobileLandscape) {
+      font-size: 18px;
+      width: 50%;
+      right: 5%;
+      left: initial;
+    } 
+  }
+  h2.showcaseMessage.animate {
+    @include breakpoint($bp-hd) {
+      top: 20px;
+      right: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 40px;
+      margin: auto;
+    }
+  }
+  p.showcaseMessage.animate {
+    @include breakpoint($bp-hd) {
+      font-size: 40px;
+    }
+  }
+
+  .placard { 
+    @include breakpoint($bp-medium) { height: 150px; width: 13.75%; }
+    @include breakpoint($bp-small) { width: 19%; }
+    &.cucumber {
+      @include breakpoint($bp-medium) { display: none; }
+    }
+    &.less, &.travis {
+      @include breakpoint($bp-small) { display: none; }
+    }
+  }
+  .placard.animate {
+    a { opacity: 0; }
+
+    &.digOcean img { 
+      top: 650px; 
+      left: -100px;
+      width: 200px;
+
+      @include breakpoint($bp-large) {
+        top: 190px;
+        left: -230px;
+        width: 120px;
+      }
+      @include breakpoint($bp-medium) {
+        top: 590px;
+        left: -1090px;
+        width: 120px;
+      }
+      @include breakpoint($bp-mobileLandscape) {
+        top: 490px;
+        left: -680px;
+        width: 100px;
+      }
+      @include breakpoint($bp-small) {
+        left: -450px;
+        top: 460px;
+      }
+      @include breakpoint($bp-hd) { top: 700px; }
+    }
+    &.github img { 
+      top: 320px; 
+      left: -150px;
+      width: 170px;
+
+      @include breakpoint($bp-large) {
+        top: 180px;
+        left: -310px;
+        width: 130px;
+      }
+      @include breakpoint($bp-mobileLandscape) {
+        top: 220px;
+        left: -390px;
+        width: 100px;
+      } 
+      @include breakpoint($bp-small) {
+        top: 190px;
+        left: -290px;
+      }
+      @include breakpoint($bp-hd) { top: 600px; }
+    }
+    &.cucumber img { 
+      top: 520px; 
+      left: -250px;
+
+      @include breakpoint($bp-large) {
+        top: 120px;
+        left: -250px;
+        width: 90px;
+      }
+      @include breakpoint($bp-medium) { display: none; }
+      @include breakpoint($bp-hd) { top: 400px; }
+    }
+    &.travis  img { 
+      top: 420px; 
+      left: -150px; 
+      width: 130px;
+
+      @include breakpoint($bp-large) {
+        top: 270px;
+        left: -360px;
+        width: 90px;
+      }
+      @include breakpoint($bp-medium) {
+        top: 440px;
+        left: -710px;
+        width: 80px;
+      }
+      @include breakpoint($bp-mobileLandscape) {
+        top: 420px;
+        left: -690px;
+        width: 60px;
+      } 
+      @include breakpoint($bp-small) {
+        left: -620px;
+      } 
+    }
+    &.html5  img { 
+      top: 120px;
+      width: 120px;
+
+      @include breakpoint($bp-large) {
+        top: 10px;
+        width: 100px;
+      }
+      @include breakpoint($bp-medium) { width: 70px; }
+      @include breakpoint($bp-small) {
+        left: 20px;
+      } 
+      @include breakpoint($bp-hd) { top: 500px; }
+    }
+    &.sass  img {     
+      top: 420px;
+      left: -180px;
+      width: 150px; 
+
+      @include breakpoint($bp-large) {
+        top: 190px;
+        left: -70px;
+        width: 100px;
+      }
+      @include breakpoint($bp-medium) { 
+        width: 70px; 
+        top: 150px; 
+      }
+      @include breakpoint($bp-mobileLandscape) {
+        top: 60px;
+        left: 20px;
+      } 
+      @include breakpoint($bp-hd) { top: 750px; }
+    }
+    &.less  img {     
+      top: 600px;
+      left: -200px; 
+      width: 120px;
+
+      @include breakpoint($bp-large) {
+        top: 480px;
+        left: -340px;
+        width: 110px;
+      }
+      @include breakpoint($bp-medium) { 
+        top: 400px;
+        width: 80px; 
+      }
+      @include breakpoint($bp-mobileLandscape) {
+        top: 180px;
+        width: 80px;
+        left: -290px;
+      } 
+      @include breakpoint($bp-small) {
+        left: -230px;
+      }
+    }
+    &.jquery  img { 
+      top: 340px;     
+      left: -400px;
+      width: 200px;
+
+      @include breakpoint($bp-medium) {
+        top: 280px;
+        left: -440px;
+        width: 160px;
+      }
+      @include breakpoint($bp-mobileLandscape) {
+        top: 300px;
+        width: 120px;
+        left: -390px;
+      }
+      @include breakpoint($bp-small) {
+        left: -170px;
+        top: 300px;
+      } 
+    }
+  }
+}
+
+#index-page, #about-page, #learning-page {
+  transition-duration: 500ms;
+}
+#about-page, #learning-page {
+  display: none;
+  // opacity: 0;
+}
 
 @-webkit-keyframes spin {
   0%  {-webkit-transform: rotateY(0deg);}
