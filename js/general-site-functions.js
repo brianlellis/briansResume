@@ -11,6 +11,7 @@ var siteCore = (function ($) {
       contactForm = modal.find('form'),
       contactText = modal.find('textarea'),
       contactStatus = modal.find('.status'),
+      pageNavSel = $('.page-nav'), // 
 
       // Index page selectors
       slideCount, slideWidth, slideHeight,
@@ -35,10 +36,26 @@ var siteCore = (function ($) {
       _self.freezeScroll(); // freezes scroll without using CSS
     },
     observers: function () {
+      _self.pageNav();
       _self.modalOpenClose();
       _self.modalContact();
-      $(window).resize(function(event) {
+      $(window).resize(function(e) {
         _self.awardsAndCertsSizing();
+      });
+    },
+    pageNav: function () {
+      pageNavSel.click(function(e) {
+        e.preventDefault();
+        if ( $(this).hasClass('about') ) {
+          $('#index-page, #learning-page').hide();
+          $('#about-page').show();
+        } else if ( $(this).hasClass('learning') ) {
+          $('#index-page, #about-page').hide();
+          $('#learning-page').show();
+        } else {
+          $('#about-page, #learning-page').hide();
+          $('#index-page').show();
+        }
       });
     },
     modalOpenClose: function () {
