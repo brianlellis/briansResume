@@ -1,4 +1,4 @@
-aside#proven {
+#proven, #proven2 {
   background: #1b1b1b;
   text-align: center;
   height: 50px;
@@ -21,4 +21,9 @@ aside#proven {
       text-decoration: underline;
     }
   }
+}
+#proven2 {
+  background: #1a793d;
+  padding: 5px 0;
+  img { height: 40px;}
 }
