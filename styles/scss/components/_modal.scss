@@ -27,13 +27,22 @@
     margin: 5% auto;
     position: absolute;
     right: 0;
-    width: 730px;
+    width: 740px;
 
     section { padding: 10px 0; }
 
     h1 { font-size: 28px; }
-    p { font-size: 18px; }
+    p { font-size: 18px; min-height: 150px; }
+    a { margin: 0; padding: 0; }
 
+    #proven-modal {
+      display: none;
+      div { 
+        text-align: center; 
+        img { max-width: initial; height: 100px; }
+        p { font-size: 16px; }
+      }
+    }
     #contact-me {
       #form-messages { 
         &.success {
