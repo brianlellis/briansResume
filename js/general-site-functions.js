@@ -140,14 +140,6 @@ var siteCore = (function ($) {
     awardsAndCerts: function () {
       _self.awardsAndCertsSizing();
       _self.autoSlide();
-
-      $('.control_next').click(function (e) {
-        e.preventDefault();
-        _self.sliderMoveRight();
-
-        // FIXME: This is a sloppy method for auto starting the auto slider again and needs more logic        
-        autoSlideStopped = true;
-      });
     },
     awardsAndCertsSizing: function () {
       $('#sliderHold, #sliderHold li').css('width',''); // clear inline vals to allow css to give correct val
@@ -171,13 +163,6 @@ var siteCore = (function ($) {
           }, 10000);
         }
       }, 5000);
-    },
-    sliderMoveRight: function() {
-      $('#sliderHold li:eq(0)').animate({
-          marginLeft: - slideWidth * 1.2 // Multiplier ex 1.2 affects amount of slides to go past
-      }, 'slow', function () {
-          $('#sliderHold li:first-child').css('marginLeft','').appendTo('#sliderHold');
-      });
     },
     goToClients: function () {
       clientPictures.click(function(event) {
