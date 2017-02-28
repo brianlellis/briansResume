@@ -1,2 +1,0 @@
-/** @namespace */
-var Namespace1;
