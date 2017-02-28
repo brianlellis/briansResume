@@ -67,7 +67,7 @@ var canvas, ctx, width, height, rainbow;
 
 init();
 function init() {
-  canvas = document.querySelector('canvas');
+  canvas = document.getElementById('bottomCanvas');
   ctx = canvas.getContext('2d');
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;

@@ -24,7 +24,7 @@ section[class^="col-"] {
 
 // Even width col divisions
 .col-2 div { width: 50%; }
-.col-3 div { width: 33%; }
+.col-3 div { width: 32.5%; float: left; }
 .col-4 div { width: 25%; float: left; }
 .col-5 div { width: 20%; }
 .col-6 div { width: 16%; }

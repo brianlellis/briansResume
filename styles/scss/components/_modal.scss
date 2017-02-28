@@ -38,8 +38,10 @@
       display: none;
       div { 
         text-align: center; 
+        h1 { margin-bottom: 0; }
+        h2 { margin: 0; font-size: 20px; }
         img { max-width: initial; height: 100px; }
-        p { font-size: 16px; min-height: 150px; }
+        p { font-size: 16px; min-height: 120px; }
         a { margin: 0; padding: 0; }
       }
     }

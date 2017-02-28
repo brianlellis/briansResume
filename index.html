@@ -21,7 +21,8 @@
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
   <link rel="stylesheet" href="compiled/main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.6.2/phaser.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="homepage">
   <aside class="contact-info">(803) 556-0261 <span>Brian@BriansResume.com</span></aside>
@@ -238,7 +239,7 @@
     <aside id="proven2">
       <img src="media/homepage/hackerrank.png">
       <a href="#" class="modal proven">
-        Verified proven BASH/Linux skills. <span>Click to view</span>
+        Verified proven BASH/Linux/SQL skills. <span>Click to view</span>
       </a>
     </aside>
     <section aria-label="Brief description section">
@@ -506,7 +507,7 @@
       </ul>
     </section>
     <section aria-label="Information about this site" id="site-resources" class="card-grid-2 card-8 pad-side">
-      <canvas></canvas>
+      <canvas id="bottomCanvas"></canvas>
       <h1>Resourcefully small, technically amazing</h1>
       <h2 class="showcaseMessage">I really wanted to discuss all the technical stuff I can do...<br />but at the last second thought you'd much rather appreciate some cool html5 canvas</h2>
       <p class="showcaseMessage">Click anywhere to close</p>
@@ -585,9 +586,10 @@
         </form>
       </section>  
       <!-- Proven section of modal -->
-      <section id="proven-modal" class="col-4">
+      <section id="proven-modal" class="col-3">
         <div>
           <h1>HackerRank</h1>
+          <h2>Top 5% BASH/SQL</h2>
           <img src="media/proven/hackerRank.png" alt="coderbyte website logo">
           <p>
             HackerRank is the most used recruiting and evaluation site available. Used by Google, Amazon and more, devs here have proven their chops.
@@ -596,6 +598,7 @@
         </div>
         <div>
           <h1>CoderByte</h1>
+          <h2>Top 200 JS</h2>
           <img src="media/proven/coderbyte.png" alt="coderbyte website logo">
           <p>
             Coderbyte is one of the oldes and respect code challenge communities on the net recommended by HackReactor and more! 
@@ -603,15 +606,8 @@
           <a href="https://coderbyte.com/profile/brianlellis" target="_blank" title="proven skills link">Visit Profile</a>
         </div>
         <div>
-          <h1>Codewars</h1>
-          <img src="media/proven/codewars.png" alt="coderbyte website logo">
-          <p>
-            Codewars is a collective effort to train and qualify web and network developers.
-          </p>
-          <a href="https://www.codewars.com/users/brianlellis" target="_blank" title="proven skills link">Visit Profile</a>
-        </div>
-        <div>
           <h1>Github</h1>
+          <h2>Examples</h2>
           <img src="media/proven/github.png" alt="coderbyte website logo">
           <p>
             Git is the one of the most popular version control systems available. Check out my repos!
@@ -623,6 +619,7 @@
   </div>
 
   <!--NON-LIBRARY JS ASSETS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/general-site-functions.js" type="text/javascript" charset="utf-8" async defer></script>
   <script src="js/canvasAnim.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
